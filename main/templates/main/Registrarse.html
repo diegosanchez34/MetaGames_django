@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio"
+    />
+    <meta name="keywords" content="games, videogames, pc, computers, gamers" />
+    <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo" />
+    <title>New Games</title>
+    <link rel="stylesheet" href="../css/log-reg.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="../icons/favicon_2.svg" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+$(document).ready(function() {
+  $("#buttom").click(function(event) {
+    event.preventDefault();
+    // Validar el campo Nombre
+    if ($("#campo").val() == "") {
+      alert("Por favor ingresa tu nombre");
+      return false;
+    }
+    // Validar el campo Apellidos
+    if ($("#campo2").val() == "") {
+      alert("Por favor ingresa tus apellidos");
+      return false;
+    }
+    // Validar el campo Correo
+    var email = $("#email").val();
+    if (email == "") {
+      alert("Por favor ingresa tu correo");
+      return false;
+    }
+    // Validar que el correo tenga un formato válido
+    var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      alert("Por favor ingresa un correo válido");
+      return false;
+    }
+    // Validar el campo Contraseña
+    if ($("#password").val() == "") {
+      alert("Por favor ingresa una contraseña");
+      return false;
+    }
+    // Validar que las contraseñas coincidan
+    if ($("#password").val() != $("#password2").val()) {
+      alert("Las contraseñas no coinciden");
+      return false;
+    }
+    // Validar que se haya aceptado los Términos y Condiciones
+    if (!$("input[type='checkbox']").is(":checked")) {
+      alert("Debes aceptar los Términos y Condiciones");
+      return false;
+    }
+    // Si todo está bien, se envía el formulario
+    $("form").submit();
+  });
+});
+    </script>
+  </head>
+
+  <body class="cuerpo">
+    <section>
+      <a href="../index.html">
+        <img src="../img/MetaGamesLogo_2.png" alt="logo" class="logo2"
+      /></a>
+      <div class="form-box1">
+        <div class="form-value">
+          <form action="../index.html">
+            <h2>Registrarse</h2>
+            <div class="inputbox1">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input type="text" id="campo" required />
+              <label for="">Nombre</label>
+            </div>
+            <div class="inputbox1">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input type="text" id="campo2" required />
+              <label for="">Apellidos</label>
+            </div>
+            <div class="inputbox1">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input  id="email"  />
+              <label for="">Correo</label>
+            </div>
+            <div class="inputbox1">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input type="password" id="password" required />
+              <label for="">Contraseña</label>
+            </div>
+            <div class="inputbox1">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+              <input type="password" id="password2" required />
+              <label for="">Repetir Contraseña</label>
+            </div>
+            <div class="forget1">
+              <label for=""><input type="checkbox" />Acepta
+                <a href="#">Terminos y Condiciones</a></label>
+            </div>
+            <a href="../index.html" target="_parent"
+              ><button class="butt1" id="buttom">Registrar</button></a
+            >
+          </form>
+        </div>
+      </div>
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
