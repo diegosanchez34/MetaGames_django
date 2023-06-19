@@ -1,0 +1,101 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'main/stylep.css'%}  ">
+    <title>signin-signup</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="signin-signup">
+            <form action="" class="sign-in-form">
+                <h2 class="title">Iniciar Sesión</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Usuario">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <input type="submit" value="Ingresar" class="btn">
+                <p class="social-text">Ingresa usando</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon1">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon2">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon3">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <p class="account-text">No tienes cuenta?<a href="#" id="sign-up-btn2">Registrate</a></p>
+            </form>
+            <form action="" class="sign-up-form">
+                <h2 class="title">Registrarse</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Usuario">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Correo Electrónico">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <input type="submit" value="Registrarse" class="btn">
+                <p class="social-text">Ingresa usando</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon1">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon2">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon3">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <p class="account-text">¿Ya tienes cuenta?<a href="#" id="sign-in-btn2">Iniciar Sesión</a></p>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>¿Ya estas con nosotros?</h3>
+                    <p>¡Inicia sesión para seguir disfrutando de todos tus juegos favoritos!</p>
+                    <button class="btn" id="sign-in-btn">Ingresar Sesión</button>
+                </div>
+                <img src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="" class="image">
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>¡Forma parte de nosotros!</h3>
+                    <p>Registrate y disfruta de cada uno de los juegos que tenemos para ti</p>
+                    <button class="btn" id="sign-up-btn">Registrarse</button>
+                </div>
+                <img src="{% static 'main/media\MetaGamesLogo_2.png' %}" alt="" class="image">
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'main/js/main2.js' %}"></script>
+</body>
+
+</html>
