@@ -1,256 +1,393 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio">
-    <meta name="keywords" content="games, videogames, pc, computers, gamers">
-    <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
-    <title>Classic Games</title>
-    <link rel="stylesheet" href="../css\Styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="icon" href="../icons/favicon_2.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
+    <link rel="icon" href="{% static 'main/media/icons\favicon_2.svg' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+
+    <title>MetaGames</title>
+
+    <link rel="stylesheet" href="{% static 'main/estilos.css'%}">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
-
-<body class="cuerpo">
-    <nav class="izquierda">
-        <img class="logo" src="../img/MetaGamesLogo_2.png" alt="Logo de Meta-Games">
-
-        <ul>
-            <li> <img src="../icons/Inicio.svg" alt="icon inicio"> <a href="../index.html">Inicio</a></li>
-            <li> <img src="../icons/Nosotros.svg" alt="icon nosotros"> <a href="Nosotros.html">Nosotros</a></li>
-            <li> <img src="../icons/Retro.svg" alt="icon retrogames"> <a href="RetroGames.html">Retro Games</a></li>
-            <li> <img src="../icons/Nuevos.svg" alt="icon nuevos"> <a href="NewGames.html">New Games</a></li>
-            <li> <img src="../icons/Clasicos.svg" alt="icon clasicos"> <a href="ClassicGames.html">Classic Games</a></li>
-            <li> <img src="../icons/Contactanos.svg"alt="icon contacto"> <a href="Contactanos.html">Contacto</a></li>
-       </ul> 
-    </nav>
-
-    <header class="cabecera">
+<body id="body">
+    
+    <header class="header">
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
         <div class="search">
-            <span class="uil uil-search">
-            </span>
-            <input placeholder="Buscar...." type="text" />
+            <span class="uil uil-search"></span>
+            <input id="searchInput" placeholder="Buscar en Meta-Games" type="text" />
             
           </div>
-        <a class="sing-in" href="Registrarse.html">Registrarse</a>
-        <a class="log-in" href="IniciarSesion.html">Iniciar Sesión</a>
+
+          <div class="icons">
+   
+            <a  class="fas fa-shopping-cart"></a>
+            <a href="{% url 'iniciarsesion' %}"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
+
+        </div>
+
     </header>
 
-    <main class="contenido">
-        
-        <div class="titulo-pagina"><img src="../icons/Retro.svg"><span>Juegos Retro</span></div>
+    <div class="menu__side" id="menu_side">
 
-        <!-- Seccion 1-->
-
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;" >
-                <img class="card-img-top" src="../img/retro/ageofempires2.jpg" alt="Card image cap" >
-                <div class="card-body">
-                  <h4 class="card-title">Age Of Empires 2</h4>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/ageofempires2.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/aloneinthedark.jpg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Alone In The Dark</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/alone-in-the-dark-1.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/anotherworld.jpg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Another World</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/another-world-20th-anniversary-edition.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/baldursgate2 (1).jpg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Baldur's Gate II</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/baldurs-gate-ii.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-
-        <!-- Seccion 2-->
-
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="../img/retro/diablo.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Diablo</h4>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/D.1.A.B.L.0.1. [BajarJuegosPCGratis.Com].torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/doom.png" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Doom</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/doom.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/doom2 (2).png" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Doom 2</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/doom-2.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/fallout2.jpg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Fallout 2</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/fallout-2.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-
-        <!-- Seccion 3-->
-
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="../img/retro/fifa98.jpg" alt="Card image cap" >
-                <div class="card-body">
-                  <h4 class="card-title">Fifa 98</h4>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/fifa-98-road-to-world-cup.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/finalfantasy3.jpeg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Final Fantasy III</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/final-fantasy-3.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/grimfandango.jpg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Grim Fandango</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/grimfandango.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/jalflife.png" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Half-Life</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/half_life.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-        
-        <!-- Seccion 4-->
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="../img/retro/Legacy of Kain Soul Reaver 2.jpg" alt="Card image cap" >
-                <div class="card-body">
-                  <h6 class="card-title">Legacy Of Kain Soul Reaver 2</h6>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/legacy-of-kain-soul-reaver.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/loom.jpg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Loom</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/loom.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/metalgearsolid.jpg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Metal Gear Solid</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/metal-gear-solid.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/Planescape Torment.jpeg" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Planescape Torment</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/planescape-torment-enhanced-edition.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-
-        <div class="navegacion">
-            <a class="boton" href="RetroGames2.html">SIGUIENTE</a>
+        <div class="name__page">
+            <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games"> 
         </div>
+        <div class="options__menu">	
+            <a href="{% url 'index' %}" >
+                <div class="option">    
+                    <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio">
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            <a href="{% url 'nosotros' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> 
+                    <h4>Nosotros</h4>
+                </div>
+            </a>
+            
+            <a href="{% url 'retrogames' %}" class="selected">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> 
+                    <h4>RetroGames</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'newgames' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos">
+                    <h4>New Games</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'classicgames' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> 
+                    <h4>Classic Games</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'contactanos' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Contactanos.svg' %}" alt="icon contacto"> 
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <main>
+
+     
+          
+          <div class="carrito">
+            <h2>Carrito de compras</h2>
+            <ul class="lista-carrito"></ul>
+            <p class="total">Total: $0</p>
+            <button class="vaciar-carrito">Vaciar carrito</button>
+            <button class="comprar">Comprar</button>
+          </div>
+        
+          <div class="modal">
+            <div class="modal-contenido">
+              <h2>Confirmar compra</h2>
+              <p>¿Estás seguro de que deseas realizar la compra?</p>
+              <button class="cancelar-compra">Cancelar</button>
+              <button class="confirmar-compra">Confirmar</button>
+            </div>
+          </div>
+
+          
+      
+
+          <section class="shop" id="shop">
+            <h1 class="tittle">Retro<span>Games</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/ageofempires2.jpg' %}">
+                       
+                    </div>
+                    <div class="content">
+                        <h3>Age Of Empires 2</h3>
+                        <div class="price">$26.000 CLP </div>
+                        <button class="agregar-carrito" data-nombre="Age Of Empires 2" data-precio="24000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/aloneinthedark.jpg' %}">
+                       
+                    </div>
+                    <div class="content">
+                        <h3>Alone In The Dark</h3>
+                        <div class="price">$49.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Alone In The Dark" data-precio="24990">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/anotherworld.jpg' %}">
+                      
+                    </div>
+                    <div class="content">
+                        <h3>Another World</h3>
+                        <div class="price">$18.300 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Another World" data-precio="16000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/baldursgate2 (1).jpg' %}">
+                      
+                    </div>
+                    <div class="content">
+                        <h3>Baldur's Gate II</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Baldur's Gate II" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/diablo.jpg' %}">
+                       
+                    </div>
+                    <div class="content">
+                        <h3>Diablo</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Diablo" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/doom.png' %}">
+                       
+                    </div>
+                    <div class="content">
+                        <h3>Doom</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Doom" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/doom2 (2).png' %}">
+                   
+                    </div>
+                    <div class="content">
+                        <h3>Doom 2</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Doom 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/fallout2.jpg' %}">
+                     
+                    </div>
+                    <div class="content">
+                        <h3>Fallout 2</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Fallout 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/fifa98.jpg' %}">
+                       
+                    </div>
+                    <div class="content">
+                        <h3>Fifa 98</h3>
+                        <div class="price">$43.000 CLP </div>
+                        <button class="agregar-carrito" data-nombre="Fifa 98" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/finalfantasy3.jpeg' %}">
+                      
+                    </div>
+                    <div class="content">
+                        <h3>Final Fantasy III</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Final Fantasy III" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/grimfandango.jpg' %}">
+                       
+                    </div>
+                    <div class="content">
+                        <h3>Grim Fandago</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Grim Fandago" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/jalflife.png' %}">
+                        
+                    </div>
+                    <div class="content">
+                        <h3>Half-Life</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Half-Life" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/Legacy of Kain Soul Reaver 2.jpg' %}">
+                    </div>
+                    <div class="content">
+                        <h3>Legacy Of Kain Soul Reaver</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Legacy Of Kain Soul Reaver" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/loom.jpg' %}">
+                       
+                    </div>
+                    <div class="content">
+                        <h3>Loom</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Loom" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/metalgearsolid.jpg' %}">
+                        
+                    </div>
+                    <div class="content">
+                        <h3>Metal Gear Solid</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Metal Gear Solid" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/retro/Planescape Torment.jpeg' %}">
+                        
+                    </div>
+                    <div class="content">
+                        <h3>Planescape Torment</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Planescape Torment" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\retro\Quake (1).jpg' %}">
+                        
+                    </div>
+                    <div class="content">
+                        <h3>Quake</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Quake" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div> 
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\retro\silenthill1.jpg' %}">
+                        
+                    </div>
+                    <div class="content">
+                        <h3>Silent Hill</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Silent Hill" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div> 
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\retro\streetfighter2.jpg' %}">
+                        
+                    </div>
+                    <div class="content">
+                        <h3>Street Fighter II</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="Street Fighter II" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div> 
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\retro\System Shock 2.jpg' %}">
+                        
+                    </div>
+                    <div class="content">
+                        <h3>System Shock 2</h3>
+                        <div class="price">$43.000 CLP</div>
+                        <button class="agregar-carrito" data-nombre="System Shock 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>   
+               
+               
+            </div>
+            
+    <button type="button" class="btn1"><a href="{% url 'retrogames2' %}">Siguiente</a>  </button>
+        </section>
+     
     </main>
 
-    <footer class="pie">  
-        <div class="izq_pie">
-          <img class="logo_pie" src="../img\MetaGamesLogo_3.png" alt="Logo de Meta-Games blanco">
-        </div>
-  
-        <div class="centro_pie">
-          <span>Siguenos en: </span>
-          <a href="https://www.instagram.com/"><img class="fa-instagram" src="../icons/instagram.svg" alt="Logo de Instagram"></a>
-          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="../icons/facebook.svg" alt="Logo de Instagram"></a>
-          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="../icons/twitter.svg" alt="Logo de Instagram"></a>
-        </div>
-  
-        <div class="der_pie">
-          <span>MetaGames © 2023</span>
-        </div>      
+    <footer>
+        <section class="footer" id="contact">
+           
+            <div class="box-container">
+    
+              
+                
+               
+                
+                <div class="box">
+                  
+                        <img src="{% static 'main/media/MetaGamesLogo_21.png' %}" alt="logo" width="220" height="30">
+                  
+                </div > 
+                <div class="box">
+                    <h3>Detalles de Contacto</h3>
+                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
+                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
+                    <a href="#" class="link"><i class="fas fa-envelope"></i>metaguid.duoc@gmail.com</a>
+                    <a href="#" class="link"><i class="fas fa-map"></i>Egaña 323, Puerto Montt Chile</a>
+                  
+                </div>
+    
+                <div class="box">  <h3>Siguenos en</h3>
+                   <div class="share">
+                
+                        <a href="" class="fab fa-facebook-f"></a>
+                        <a href="" class="fab fa-twitter"></a>
+                        <a href="" class="fab fa-instagram"></a>
+                        <a href="" class="fab fa-youtube"></a>
+                    </div>
+                </div>
+    
+                
+            </div>
+            <div class="credit"><span>Meta Games |</span>| Derechos Reservados</div>
+            
+    
+        </section>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+    <script src="{% static 'main/js/script.js' %}"></script>
+    <script src="{% static 'main/js/script2.js' %}"></script>
+  
 </body>
-
 </html>

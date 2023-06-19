@@ -1,308 +1,364 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio">
-  <meta name="keywords" content="games, videogames, pc, computers, gamers">
-  <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
-  <title>Classic Games</title>
-  <link rel="stylesheet" href="../css\Styles.css">
-  <script src="../js/main.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="icon" href="../icons/favicon_2.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro&display=swap"
-    rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+
+    <title>MetaGames</title>
+
+    <link rel="stylesheet" href="{% static 'main/estilos.css'%}   ">
+
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
+<body id="body">
+    
+    <header class="header">
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+        <div class="search">
+            <span class="uil uil-search"></span>
+            <input id="searchInput" placeholder="Buscar en Meta-Games" type="text" />
+            
+          </div>
 
-<body class="cuerpo">
-  <nav class="izquierda">
-    <img class="logo" src="../img/MetaGamesLogo_2.png" alt="Logo de Meta-Games">
+          <div class="icons">
+          
+            <a  class="fas fa-shopping-cart"></a>
+            <a href="{% url 'iniciarsesion '%}"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
 
+        </div>
 
-    <ul>
-      <li> <img src="../icons/Inicio.svg" alt="icon inicio"> <a href="../index.html">Inicio</a></li>
-      <li> <img src="../icons/Nosotros.svg" alt="icon nosotros"> <a href="Nosotros.html">Nosotros</a></li>
-      <li> <img src="../icons/Retro.svg" alt="icon retrogames"> <a href="RetroGames.html">Retro Games</a></li>
-      <li> <img src="../icons/Nuevos.svg" alt="icon nuevos"> <a href="NewGames.html">New Games</a></li>
-      <li> <img src="../icons/Clasicos.svg" alt="icon clasicos"> <a href="ClassicGames.html">Classic Games</a></li>
-      <li> <img src="../icons/Contactanos.svg" alt="icon contacto"> <a href="Contactanos.html">Contacto</a></li>
-    </ul>
-  </nav>
+    </header>
 
-  <header class="cabecera">
-    <div class="search">
-      <span class="uil uil-search">
-      </span>
-      <input id="searchInput" placeholder="Buscar...." type="text" />
+    <div class="menu__side" id="menu_side">
 
+        <div class="name__page">
+            <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games"> 
+        </div>
+        <div class="options__menu">	
+            <a href="{% url 'index' %}" >
+                <div class="option">    
+                    <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio">
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            <a href="{% url 'nosotros' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> 
+                    <h4>Nosotros</h4>
+                </div>
+            </a>
+            
+            <a href="{% url 'retrogames' %}">
+                <div class="option" >
+                    <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames">
+                    <h4>RetroGames</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'newgames' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos">
+                    <h4>New Games</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'classicgames' %}" class="selected">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> 
+                    <h4>Classic Games</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'contactanos' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Contactanos.svg'%}"alt="icon contacto"> 
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+        </div>
 
     </div>
-    <a class="sing-in" href="Registrarse.html">Registrarse</a>
-    <a class="log-in" href="IniciarSesion.html">Iniciar Sesión</a>
-  </header>
 
-  <main class="contenido">
-    <div class="titulo-pagina"><img src="../icons/Clasicos.svg" alt="icon clasicos"><span>Juegos Clasicos</span></div>
+    <main>
 
-
-    <!-- Seccion 1-->
-    <section class="fila">
-      <div class="image-container">
-        <div class="card" data-categoria:="Accion" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-          <img class="card-img-top" src="../img/classic/gta52.jpg" alt="Card image cap">
-          <div class="word-overlay">Accion/Mundo Abierto</div>
-          <div class="card-body">
-            <h5 class="card-title">Grand Theft Auto V</h5>
-            <p class="card-text">$5.000</p>
-            <a href="../torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+     
+          
+          <div class="carrito">
+            <h2>Carrito de compras</h2>
+            <ul class="lista-carrito"></ul>
+            <p class="total">Total: $0</p>
+            <button class="vaciar-carrito">Vaciar carrito</button>
+            <button class="comprar">Comprar</button>
           </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-        <div class="card" data-categoria:="Accion" data-categoria:="RPG" id="game" style="width: 18rem;">
-          <img class="card-img-top" src="../img/classic/masseffect2.jpg" alt="Card image cap">
-          <div class="word-overlay">Accion/RPG</div>
-          <div class="card-body">
-            <h5 class="card-title">Mass Effect 2</h5>
-            <p class="card-text">$5.000</p>
-            <a href="../torrents/masseffect2.torrent" class="btn btn-dark btn-block">Descargar</a>
+        
+          <div class="modal">
+            <div class="modal-contenido">
+              <h2>Confirmar compra</h2>
+              <p>¿Estás seguro de que deseas realizar la compra?</p>
+              <button class="cancelar-compra">Cancelar</button>
+              <button class="confirmar-compra">Confirmar</button>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Puzzle" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/portal_2 (1).jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Puzzle</div>
-        <div class="card-body">
-          <h5 class="card-title">Portal 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Tportal2.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-      </div>
-      </div>
+          
+      
 
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/batmanac.jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Mundo Abierto</div>
-        <div class="card-body">
-          <h5 class="card-title">Batman Arkham City</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Batman-Arkham-City-GOTY-[MULTI11][Steam-Edition][P2P]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
+          <section class="shop" id="shop">
+            <h1 class="tittle">Classic<span>Games</span></h1>
+            <div class="box-container">
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/classic/gta52.jpg' %}">
+                        <div class="icons">    
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Gta-V</h3>
+                        <div class="price">$26.000 CLP <span> $24.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Gta-V" data-precio="24000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media/classic\masseffect2.jpg' %}">
+                    
+                    </div>
+                    <div class="content">
+                        <h3>Mass Effect 2</h3>
+                        <div class="price">$49.000 CLP<span> $24.990</span></div>
+                        <button class="agregar-carrito" data-nombre="Mass Effect 2" data-precio="24990">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\portal_2 (1).jpg' %}">
+                        <div class="icons">
+                         
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Portal 2</h3>
+                        <div class="price">$18.300 CLP<span> $16.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Portal 2" data-precio="16000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\batmanac.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Batman Arkham City</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Batman Arkham City" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\farcrydosdos.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Far Cry 2</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Far Cry 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\half life_2.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Half-Life 2</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Half-Life 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\bioshock 1 remastered.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>BioShock</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="BioShock" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\bioshock_2.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>BioShock 2</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="BioShock 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\StarCraft2 (2).jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>StarCraft 2</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="StarCraft 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\7dtd.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>7 Days To Die</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="7 Days To Die" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\skyrimm (1).jpeg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Skyrim V</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Skyrim" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\assassins_creed_blag_flag (1).jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Assassin's Creed IV</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Assassin's Creed IV" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\Grand_Theft_Auto_San_Andreas.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>GTA: San Andreas</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="GTA: San Andreas" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\payday_2.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Pay Day 2</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Pay Day 2" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="img">
+                        <img src="{% static 'main/media\classic\resident_evil_4.jpg' %}">
+                        <div class="icons">
+                          
+                        </div>
+                    </div>
+                    <div class="content">
+                        <h3>Resident Evil 4</h3>
+                        <div class="price">$43.000 CLP<span> $28.000</span></div>
+                        <button class="agregar-carrito" data-nombre="Resident Evil 4" data-precio="43000">Agregar al carrito</button>
+                    </div>
+                </div>
+               
+            </div>
+            
+    <button type="button" class="btn1"><a href="{% url 'classicgames2' %}">Siguiente</a>  </button>
+        </section>
+     
+    </main>
 
-    </section>
+    <footer>
+        <section class="footer" id="contact">
+           
+            <div class="box-container">
+    
+              
+                
+               
+                
+                <div class="box">
+                  
+                        <img src="{% static 'main/media/MetaGamesLogo_21.png' %}" alt="logo" width="220" height="30">
+                  
+                </div > 
+                <div class="box">
+                    <h3>Detalles de Contacto</h3>
+                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
+                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
+                    <a href="#" class="link"><i class="fas fa-envelope"></i>metaguid.duoc@gmail.com</a>
+                    <a href="#" class="link"><i class="fas fa-map"></i>Egaña 323, Puerto Montt Chile</a>
+                  
+                </div>
+    
+                <div class="box">  <h3>Siguenos en</h3>
+                   <div class="share">
+                
+                        <a href="" class="fab fa-facebook-f"></a>
+                        <a href="" class="fab fa-twitter"></a>
+                        <a href="" class="fab fa-instagram"></a>
+                        <a href="" class="fab fa-youtube"></a>
+                    </div>
+                </div>
+    
+                
+            </div>
+            <div class="credit"><span>Meta Games |</span>| Derechos Reservados</div>
+            
+    
+        </section>
+    </footer>
 
-    <!-- Seccion 2-->
-    <section class="fila">
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/farcrydosdos.jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Far Cry 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Farcry-2-[Spanish][PCDVD][REPACK][By-Otto]-(Torrent) (1).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/half life_2.jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Half-Life 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/halflife2.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/bioshock 1 remastered.jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">BioShock</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/bioshockremas.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/bioshock_2.jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">BioShock 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/bioshock2.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Seccion 3-->
-    <section class="fila">
-      <div class="image-container">
-      <div class="card" data-categoria:="Estrategia" data-categoria:="Sci-Fi" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/StarCraft2 (2).jpg" alt="Card image cap">
-        <div class="word-overlay">Estrategia/Sci-Fi</div>
-        <div class="card-body">
-          <h5 class="card-title">StarCraft 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/StarCraft-II-Heart-Of-The-Swarm-[MULTI][PROPER][RELOADED]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Aventura" data-categoria:="Survival" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/7dtd.jpg" alt="Card image cap">
-        <div class="word-overlay">Aventura/Survival</div>
-        <div class="card-body">
-          <h5 class="card-title">7 Days To Die</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/7daystodie.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="RPG" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/skyrimm (1).jpeg" alt="Card image cap">
-        <div class="word-overlay">RPG/Mundo Abierto</div>
-        <div class="card-body">
-          <h5 class="card-title">Skyrim
-          </h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/bioshockremas.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Aventura" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/assassins_creed_blag_flag (1).jpg" alt="Card image cap">
-        <div class="word-overlay">Aventura/Mundo Abierto</div>
-        <div class="card-body">
-          <h5 class="card-title">Assassin's Creed IV</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/BlackFlag.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Seccion 4-->
-    <section class="fila">
-      <div class="image-container">
-      <div class="card" data-categoria:="Aventura" data-categoria:="Horror" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/alan_wake.png" alt="Card image cap">
-        <div class="word-overlay">Aventura/Horror</div>
-        <div class="card-body">
-          <h5 class="card-title">Alan Wake</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/AlanWake.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/bioshock_infinity.jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Bioshock Infinite</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/BioShock-Infinite-Complete-Edition[ESP][PROPHET]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/borderlands_2.jpg" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Borderlands 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Borderlands-2-Game-Of-The-Year-Edition-[MULTI6][V1.802-Incl-All-DLC][Royalgamer06]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Horror" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="../img/classic/resident_evil_6_poster_by_jevangood_d5ja3uu-pre (1).jpg">
-        <div class="word-overlay">Accion/Horror</div>
-        <div class="card-body">
-          <h5 class="card-title">Resident Evil 6</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/residentevil6.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-    </section>
-
-    <div class="navegacion">
-      <a class="boton" href="ClassicGames2.html">SIGUIENTE</a>
-    </div>
-
-  </main>
-
-    <footer class="pie">  
-        <div class="izq_pie">
-          <img class="logo_pie" src="../img\MetaGamesLogo_3.png" alt="Logo de Meta-Games blanco">
-        </div>
+    <script src="{% static 'main/js/script.js' %}"></script>
+    <script src="{% static 'main/js/script2.js' %}"></script>
   
-        <div class="centro_pie">
-          <span>Siguenos en: </span>
-          <a href="https://www.instagram.com/"><img class="fa-instagram" src="../icons/instagram.svg" alt="Logo de Instagram"></a>
-          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="../icons/facebook.svg" alt="Logo de Instagram"></a>
-          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="../icons/twitter.svg" alt="Logo de Instagram"></a>
-        </div>
-  
-        <div class="der_pie">
-          <span>MetaGames © 2023</span>
-        </div>      
-      </footer>
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
 </body>
-
-
 </html>
