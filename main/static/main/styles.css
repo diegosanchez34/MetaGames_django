@@ -852,7 +852,7 @@ th {
 .generoPa {
   color: rgb(255, 255, 255);
   opacity: 0.5;
-  font-size: 18px;
+  font-size: 15px;
   width: 1000px;
   height: 100px;
   font-weight: 10;
@@ -865,7 +865,7 @@ th {
 }
 
 .generoPx {
-  font-size: 30px;
+  font-size: 35px;
   color: rgb(255, 255, 255);
   opacity: 0.5;
 }
@@ -947,9 +947,6 @@ input:-webkit-autofill{
   opacity: 0.9;
 }
 
-.listreq{
-  color: rgb(255, 255, 255);
-  opacity: 0.5;
-}
+
 
 
