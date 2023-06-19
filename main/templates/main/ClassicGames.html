@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{% static 'ongapp/icons/favicon_2.svg' %}"/>
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,7 +13,7 @@
 
     <title>MetaGames</title>
 
-    <link rel="stylesheet" href="{% static 'ongapp/estilos.css'%}   ">
+    <link rel="stylesheet" href="{% static 'main/estilos.css'%}   ">
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
@@ -32,7 +32,7 @@
           <div class="icons">
           
             <a  class="fas fa-shopping-cart"></a>
-            <a href="{% url 'iniciarsesion'%}"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
+            <a href="{% url 'iniciarsesion '%}"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
 
         </div>
 
@@ -41,46 +41,46 @@
     <div class="menu__side" id="menu_side">
 
         <div class="name__page">
-            <img class="logo" src="{% static 'ongapp/img/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games"> 
+            <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games"> 
         </div>
         <div class="options__menu">	
             <a href="{% url 'index' %}" >
                 <div class="option">    
-                    <img src="{% static 'ongapp/icons/Inicio.svg' %}" alt="icon inicio">
+                    <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio">
                     <h4>Inicio</h4>
                 </div>
             </a>
             <a href="{% url 'nosotros' %}">
                 <div class="option">
-                    <img src="{% static 'ongapp/icons/Nosotros.svg' %}" alt="icon nosotros"> 
+                    <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> 
                     <h4>Nosotros</h4>
                 </div>
             </a>
             
             <a href="{% url 'retrogames' %}">
                 <div class="option" >
-                    <img src="{% static 'ongapp/icons/Retro.svg' %}" alt="icon retrogames">
+                    <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames">
                     <h4>RetroGames</h4>
                 </div>
             </a>
 
             <a href="{% url 'newgames' %}">
                 <div class="option">
-                    <img src="{% static 'ongapp/icons/Nuevos.svg' %}" alt="icon nuevos">
+                    <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos">
                     <h4>New Games</h4>
                 </div>
             </a>
 
             <a href="{% url 'classicgames' %}" class="selected">
                 <div class="option">
-                    <img src="{% static 'ongapp/icons/Clasicos.svg' %}" alt="icon clasicos"> 
+                    <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> 
                     <h4>Classic Games</h4>
                 </div>
             </a>
 
             <a href="{% url 'contactanos' %}">
                 <div class="option">
-                    <img src="{% static 'ongapp/icons/Contactanos.svg'%}"alt="icon contacto"> 
+                    <img src="{% static 'main/media/icons/Contactanos.svg'%}"alt="icon contacto"> 
                     <h4>Contacto</h4>
                 </div>
             </a>
@@ -118,7 +118,7 @@
             <div class="box-container">
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp/img/classic/gta52.jpg' %}">
+                        <img src="{% static 'main/media/classic/gta52.jpg' %}">
                         <div class="icons">    
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\masseffect2.jpg' %}">
+                        <img src="{% static 'main/media/classic\masseffect2.jpg' %}">
                     
                     </div>
                     <div class="content">
@@ -141,7 +141,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\portal_2 (1).jpg' %}">
+                        <img src="{% static 'main/media\classic\portal_2 (1).jpg' %}">
                         <div class="icons">
                          
                         </div>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\batmanac.jpg' %}">
+                        <img src="{% static 'main/media\classic\batmanac.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -167,7 +167,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\farcrydosdos.jpg' %}">
+                        <img src="{% static 'main/media\classic\farcrydosdos.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -180,7 +180,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\half life_2.jpg' %}">
+                        <img src="{% static 'main/media\classic\half life_2.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -193,7 +193,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\bioshock 1 remastered.jpg' %}">
+                        <img src="{% static 'main/media\classic\bioshock 1 remastered.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -206,7 +206,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\bioshock_2.jpg' %}">
+                        <img src="{% static 'main/media\classic\bioshock_2.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -219,7 +219,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\StarCraft2 (2).jpg' %}">
+                        <img src="{% static 'main/media\classic\StarCraft2 (2).jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -232,7 +232,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\7dtd.jpg' %}">
+                        <img src="{% static 'main/media\classic\7dtd.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -245,7 +245,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\skyrimm (1).jpeg' %}">
+                        <img src="{% static 'main/media\classic\skyrimm (1).jpeg' %}">
                         <div class="icons">
                           
                         </div>
@@ -258,7 +258,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\assassins_creed_blag_flag (1).jpg' %}">
+                        <img src="{% static 'main/media\classic\assassins_creed_blag_flag (1).jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -271,7 +271,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\Grand_Theft_Auto_San_Andreas.jpg' %}">
+                        <img src="{% static 'main/media\classic\Grand_Theft_Auto_San_Andreas.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -284,7 +284,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\payday_2.jpg' %}">
+                        <img src="{% static 'main/media\classic\payday_2.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -297,7 +297,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="{% static 'ongapp\img\classic\resident_evil_4.jpg' %}">
+                        <img src="{% static 'main/media\classic\resident_evil_4.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -327,7 +327,7 @@
                 
                 <div class="box">
                   
-                        <img src="{% static 'ongapp/img/MetaGamesLogo_21.png' %}" alt="logo" width="220" height="30">
+                        <img src="{% static 'main/media/MetaGamesLogo_21.png' %}" alt="logo" width="220" height="30">
                   
                 </div > 
                 <div class="box">
@@ -357,8 +357,8 @@
         </section>
     </footer>
 
-    <script src="{% static 'ongapp/js/script.js' %}"></script>
-    <script src="{% static 'ongapp/js/script2.js' %}"></script>
+    <script src="{% static 'main/js/script.js' %}"></script>
+    <script src="{% static 'main/js/script2.js' %}"></script>
   
 </body>
 </html>

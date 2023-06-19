@@ -1,17 +1,19 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icons\favicon_2.svg"/>
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="{% static 'main/estilos.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
     <title>MetaGames</title>
 
-    <link rel="stylesheet" href="css/estilos.css">
+    
 
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
@@ -29,7 +31,7 @@
 
           <div class="icons">
             <a  class="fas fa-shopping-cart"></a>
-            <a href="html/IniciarSesion.html"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
+            <a href="{% url 'iniciarsesion' %}"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
 
         </div>
 
@@ -38,46 +40,47 @@
     <div class="menu__side" id="menu_side">
 
         <div class="name__page">
-            <img class="logo" src="img/MetaGamesLogo_2.png" alt="Logo de Meta-Games"> 
+            <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png'%}" alt="Logo de Meta-Games"> 
         </div>
         <div class="options__menu">	
             <a href="#" class="selected">
                 <div class="option">    
-                    <img src="icons/Inicio.svg" alt="icon inicio"> <a href="index.html">
+                    <img src="{% static 'main/media/icons/Inicio.svg'%}" alt="icon inicio"> 
+                    <a href="{% url 'index' %}">
                     <h4>Inicio</h4>
                 </div>
             </a>
-            <a href="html/Nosotros.html">
+            <a href="{% url 'nosotros' %}">
                 <div class="option">
-                    <img src="icons/Nosotros.svg" alt="icon nosotros"> 
+                    <img src="{% static 'main/media/icons/Nosotros.svg'%}" alt="icon nosotros"> 
                     <h4>Nosotros</h4>
                 </div>
             </a>
             
-            <a href="html/RetroGames.html">
+            <a href="{% url 'retrogames' %}">
                 <div class="option">
-                    <img src="icons/Retro.svg" alt="icon retrogames"> 
+                    <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> 
                     <h4>RetroGames</h4>
                 </div>
             </a>
 
-            <a href="html/NewGames.html">
+            <a href="{% url 'newgames' %}">
                 <div class="option">
-                    <img src="icons/Nuevos.svg" alt="icon nuevos">
+                    <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos">
                     <h4>New Games</h4>
                 </div>
             </a>
 
-            <a href="html/ClassicGames.html">
+            <a href="{% url 'classicgames' %}">
                 <div class="option">
-                    <img src="icons/Clasicos.svg" alt="icon clasicos"> 
+                    <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> 
                     <h4>Classic Games</h4>
                 </div>
             </a>
 
-            <a href="html/Contactanos.html">
+            <a href="{% url 'contactanos' %}">
                 <div class="option">
-                    <img src="icons/Contactanos.svg"alt="icon contacto"> 
+                    <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> 
                     <h4>Contacto</h4>
                 </div>
             </a>
@@ -112,21 +115,21 @@
         <div class="slide">
             <div class="slide-inner">
                 <input class="slide-open" type="radio" id="slide-1"name="slide" aria-hidden="true" hidden="" checked="checked">
-                <div class="slide-item"><a href="http://naruto-game.bngames.net/"><img src="img/sliders/01.png" alt="img slider"></a></div>
+                <div class="slide-item"><a href="http://naruto-game.bngames.net/"><img src="{% static 'main/media/sliders\01.png'%}" alt="img slider"></a></div>
     
                 <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-                <div class="slide-item"><a href="https://playstation.com/god-of-war"><img src="/img/sliders/02.png" alt="img slider2"></a></div>
+                <div class="slide-item"><a href="https://playstation.com/god-of-war"><img src="{% static 'main/media\sliders\02.png' %} " alt="img slider2"></a></div>
     
                 <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-                <div class="slide-item"><a href="https://www.rockstargames.com/es/games/reddeadredemption2"> <img src="../img/sliders/03.png" alt="img slider3"> </a></div>
+                <div class="slide-item"><a href="https://www.rockstargames.com/es/games/reddeadredemption2"> <img src="{% static 'main/media\sliders\03.png'%}" alt="img slider3"> </a></div>
                 
-                <label for="slide-2" class="slide-control next control-1"><img src="icons/right-arrow.svg" alt="arrow"></label>
-                <label for="slide-3" class="slide-control next control-2"><img src="icons/right-arrow.svg" alt="arrow"></label> 
-                <label for="slide-1" class="slide-control next control-3"><img src="icons/right-arrow.svg"alt="arrow"></label>
+                <label for="slide-2" class="slide-control next control-1"><img src="{% static 'main/media/icons/right-arrow.svg' %}" alt="arrow"></label>
+                <label for="slide-3" class="slide-control next control-2"><img src="{% static 'main/media/icons/right-arrow.svg' %}" alt="arrow"></label> 
+                <label for="slide-1" class="slide-control next control-3"><img src="{% static 'main/media/icons/right-arrow.svg' %}"alt="arrow"></label>
     
-                <label for="slide-3" class="slide-control prev control-1"><img src="icons/left-arrow.svg"alt="arrow"></label>
-                <label for="slide-1" class="slide-control prev control-2"><img src="icons/left-arrow.svg"alt="arrow"></label>
-                <label for="slide-2" class="slide-control prev control-3"><img src="icons/left-arrow.svg"alt="arrow"></label>
+                <label for="slide-3" class="slide-control prev control-1"><img src="{% static 'main/media/icons/left-arrow.svg' %}"alt="arrow"></label>
+                <label for="slide-1" class="slide-control prev control-2"><img src="{% static 'main/media/icons/left-arrow.svg' %}"alt="arrow"></label>
+                <label for="slide-2" class="slide-control prev control-3"><img src="{% static 'main/media/icons/left-arrow.svg' %}"alt="arrow"></label>
                            
                 <ol class="slide-indicador">
                     <li><label for="slide-1" class="slide-circulo">•</label></li>
@@ -137,7 +140,7 @@
           </div>
 
           <section class="category" id="category">
-            <h1 class="tittle">Cate<span>gorias</span></h1><hr>
+            <h1 class="tittle">Cate<span>gorias</span></h1>
             <div class="box-container">
                 <div class="collection-card" style="background-image:url(img/class1.png)">
                     <h1>RetroGames</h1>
@@ -153,15 +156,14 @@
                 </div>
     
             </div>
-            
         </section>
-<hr>
+
         <section class="shop" id="shop">
             <h1 class="tittle">Gamer<span> Descuentos</span></h1>
             <div class="box-container">
                 <div class="box">
                     <div class="img">
-                        <img src="img/classic/gta52.jpg">
+                        <img src="{% static 'main/media/classic/gta52.jpg' %}">
                         <div class="icons">
                             
                         </div>
@@ -174,7 +176,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="img/new/forza_horizon_5 (1).jpg">
+                        <img src="{% static 'main/media/new/forza_horizon_5 (1).jpg' %}">
                        
                     </div>
                     <div class="content">
@@ -185,7 +187,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="img/new/the_witcher_3.jpg">
+                        <img src="{% static 'main/media/new/the_witcher_3.jpg'%}">
                         <div class="icons">
                          
                         </div>
@@ -198,7 +200,7 @@
                 </div>
                 <div class="box">
                     <div class="img">
-                        <img src="img/NEW/elden_ring.jpg">
+                        <img src="{% static 'main/media/new/elden_ring.jpg' %}">
                         <div class="icons">
                           
                         </div>
@@ -243,7 +245,7 @@
                 
                 <div class="box">
                   
-                        <img src="img/MetaGamesLogo_21.png" alt="logo" width="220" height="30">
+                        <img src="{% static 'main/media/MetaGamesLogo_21.png'%}" alt="logo" width="220" height="30">
                   
                 </div > 
                 <div class="box">
@@ -273,8 +275,8 @@
         </section>
     </footer>
 
-    <script src="js/script.js"></script>
-    <script src="js/script2.js"></script>
-    <script src="js/script3.js"></script>
+    <script src="{% static 'main/js/script.js' % }"></script>
+    <script src="{% static 'main/js/script2.js' %}"></script>
+    <script src="{% static 'main/js/script3.js' %}"></script>
 </body>
 </html>
