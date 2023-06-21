@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/API.js"></script>
-    <script src="../MetaGames/js/main.js"></script>
+    <script src="{% static 'main/js/API.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
 </head>
 
 <body class="cuerpo"> 
@@ -24,12 +24,12 @@
         <img class="logo" src="{% static 'main\media\MetaGamesLogo_2.png' %}" alt="Logo de Meta-Gamess"> 
 
         <ul>
-          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="index.html">Inicio</a></li>
-          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="html/Nosotros.html">Nosotros</a></li>
-          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="html/RetroGames.html">Retro Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="html/NewGames.html">New Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="html/ClassicGames.html">Classic Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}" alt="icon contacto"> <a href="html/Contactanos.html">Contacto</a></li>
+          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">Inicio</a></li>
+          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="{% url 'nosotros' %}">Nosotros</a></li>
+          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="{% url 'retrogames' %}">Retro Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="{% url 'newgames' %}">New Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="{% url 'classicgames' %}">Classic Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}" alt="icon contacto"> <a href="{% url 'contactanos' %}">Contacto</a></li>
        </ul>
     </nav>
 
@@ -40,8 +40,8 @@
           <input id="searchInput" placeholder="Buscar...." type="text" />
         </div>
 
-        <a class="sing-in" href="html\Registrarse.html">Registrarse</a>
-        <a class="log-in" href="html\IniciarSesion.html">Iniciar Sesión</a>
+        <a class="sing-in" href="{% url 'registrarse' %}">Registrarse</a>
+        <a class="log-in" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a>
        
     </header>
 

@@ -11,14 +11,14 @@
     <meta name="keywords" content="games, videogames, pc, computers, gamers" />
     <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo" />
     <title>New Games</title>
-    <link rel="stylesheet" href="../css/log-reg.css" />
+    <link rel="stylesheet" href="{% static 'main/log-reg.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="icon" href="../icons/favicon_2.svg" />
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
 $(document).ready(function() {
@@ -70,12 +70,12 @@ $(document).ready(function() {
 
   <body class="cuerpo">
     <section>
-      <a href="../index.html">
-        <img src="../img/MetaGamesLogo_2.png" alt="logo" class="logo2"
+      <a href="{% url 'index' %}">
+        <img src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="logo" class="logo2"
       /></a>
       <div class="form-box1">
         <div class="form-value">
-          <form action="../index.html">
+          <form action="{% url 'index' %}">
             <h2>Registrarse</h2>
             <div class="inputbox1">
               <ion-icon name="mail-outline"></ion-icon>
@@ -106,7 +106,7 @@ $(document).ready(function() {
               <label for=""><input type="checkbox" />Acepta
                 <a href="#">Terminos y Condiciones</a></label>
             </div>
-            <a href="../index.html" target="_parent"
+            <a href="{% url 'index' %}" target="_parent"
               ><button class="butt1" id="buttom">Registrar</button></a
             >
           </form>

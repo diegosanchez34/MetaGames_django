@@ -10,10 +10,10 @@
     <meta name="keywords" content="games, videogames, pc, computers, gamers">
     <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
     <title>Classic Games</title>
-    <link rel="stylesheet" href="../css\Styles.css">
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="icon" href="../icons/favicon_2.svg">
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet" />
@@ -29,15 +29,15 @@
 
 <body class="cuerpo">
     <nav class="izquierda">
-        <img class="logo" src="../img/MetaGamesLogo_2.png" alt="Logo de Meta-Games">
+        <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games">
 
         <ul>
-            <li> <img src="../icons/Inicio.svg" alt="icon inicio"> <a href="../index.html">Inicio</a></li>
-            <li> <img src="../icons/Nosotros.svg" alt="icon nosotros"> <a href="Nosotros.html">Nosotros</a></li>
-            <li> <img src="../icons/Retro.svg" alt="icon retrogames"> <a href="RetroGames.html">Retro Games</a></li>
-            <li> <img src="../icons/Nuevos.svg" alt="icon nuevos"> <a href="NewGames.html">New Games</a></li>
-            <li> <img src="../icons/Clasicos.svg" alt="icon clasicos"> <a href="ClassicGames.html">Classic Games</a></li>
-            <li> <img src="../icons/Contactanos.svg"alt="icon contacto"> <a href="Contactanos.html">Contacto</a></li>
+          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">Inicio</a></li>
+          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="{% url 'nosotros' %}">Nosotros</a></li>
+          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="{% url 'retrogames' %}">Retro Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="{% url 'newgames' %}">New Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="{% url 'classicgames' %}">Classic Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> <a href="{% url 'contactanos' %}">Contacto</a></li>
        </ul> 
     </nav>
 
@@ -48,19 +48,19 @@
             <input placeholder="Buscar...." type="text" />
             
           </div>
-        <a class="sing-in" href="Registrarse.html">Registrarse</a>
-        <a class="log-in" href="IniciarSesion.html">Iniciar Sesión</a>
+        <a class="sing-in" href="{% url 'registrarse' %}">Registrarse</a>
+        <a class="log-in" href="{% url 'iniciarsesion.html' %}">Iniciar Sesión</a>
     </header>
 
     <main class="contenido">
 
-        <div class="titulo-pagina"><img src="../icons/Retro.svg"><span>Juegos Retro</span></div>
+        <div class="titulo-pagina"><img src="{% static 'main/media/icons/Retro.svg' %}"><span>Juegos Retro</span></div>
 
         <!-- Seccion 1-->
 
         <section class="fila">
             <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="../img/retro/Quake (1).jpg" alt="Card image cap" >
+                <img class="card-img-top" src="{% static 'main/media/retro/Quake (1).jpg' %}" alt="Card image cap" >
                 <div class="card-body">
                   <h4 class="card-title">Quake</h4>
                   <p class="card-text">$5.000</p>
@@ -69,7 +69,7 @@
             </div>
   
             <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/silenthill1.jpg" alt="Card image cap" >
+              <img class="card-img-top" src="{% static 'main/media/retro/silenthill1.jpg' %}" alt="Card image cap" >
               <div class="card-body">
                 <h4 class="card-title">Silent Hill</h4>
                 <p class="card-text">$5.000</p>
@@ -78,7 +78,7 @@
             </div>
   
             <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/streetfighter2.jpg" alt="Card image cap" >
+              <img class="card-img-top" src="{% static 'main/media/retro/streetfighter2.jpg' %}" alt="Card image cap" >
               <div class="card-body">
                 <h4 class="card-title">Street Fighter II</h4>
                 <p class="card-text">$5.000</p>
@@ -87,7 +87,7 @@
             </div>
   
             <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/System Shock 2.jpg" alt="Card image cap" >
+              <img class="card-img-top" src="{% static 'main/media/retro/System Shock 2.jpg' %}" alt="Card image cap" >
               <div class="card-body">
                 <h4 class="card-title">System Shock 2</h4>
                 <p class="card-text">$5.000</p>
@@ -101,7 +101,7 @@
 
         <section class="fila">
             <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="../img/retro/The Curse of Monkey Island.jpeg" alt="Card image cap" >
+                <img class="card-img-top" src="{% static 'main/media/retro/The Curse of Monkey Island.jpeg' %}" alt="Card image cap" >
                 <div class="card-body">
                   <h6 class="card-title">The Curse Of Monkey Island</h6>
                   <p class="card-text">$5.000</p>
@@ -110,7 +110,7 @@
             </div>
   
             <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/The Longest Journey.jpg" alt="Card image cap" >
+              <img class="card-img-top" src="{% static 'main/media/retro/The Longest Journey.jpg' %}" alt="Card image cap" >
               <div class="card-body">
                 <h4 class="card-title">The Longest Journeyl</h4>
                 <p class="card-text">$5.000</p>
@@ -119,7 +119,7 @@
             </div>
   
             <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/warcraft 2.jpg" alt="Card image cap" >
+              <img class="card-img-top" src="{% static 'main/media/retro/warcraft 2.jpg' %}" alt="Card image cap" >
               <div class="card-body">
                 <h4 class="card-title">WarCraft II</h4>
                 <p class="card-text">$5.000</p>
@@ -128,7 +128,7 @@
             </div>
   
             <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="../img/retro/Wolfenstein_3D_portada.jpg" alt="Card image cap" >
+              <img class="card-img-top" src="{% static 'main/media/retro/Wolfenstein_3D_portada.jpg' %}" alt="Card image cap" >
               <div class="card-body">
                 <h4 class="card-title">Wolfenstein 3D</h4>
                 <p class="card-text">$5.000</p>
@@ -139,21 +139,21 @@
         </section>
 
         <div class="navegacion">
-            <a class="boton"href="RetroGames.html">ANTERIOR</a>
+            <a class="boton"href="{% url 'retrogames' %}">ANTERIOR</a>
             
         </div>
     </main>
 
     <footer class="pie">  
         <div class="izq_pie">
-          <img class="logo_pie" src="../img\MetaGamesLogo_3.png" alt="Logo de Meta-Games blanco">
+          <img class="logo_pie" src="{% static 'main/media\MetaGamesLogo_3.png' %}" alt="Logo de Meta-Games blanco">
         </div>
   
         <div class="centro_pie">
           <span>Siguenos en: </span>
-          <a href="https://www.instagram.com/"><img class="fa-instagram" src="../icons/instagram.svg" alt="Logo de Instagram"></a>
-          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="../icons/facebook.svg" alt="Logo de Instagram"></a>
-          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="../icons/twitter.svg" alt="Logo de Instagram"></a>
+          <a href="https://www.instagram.com/"><img class="fa-instagram" src="{% static 'main/media/icons/instagram.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="{% static 'main/media/icons/facebook.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="{% static 'main/media/icons/twitter.svg' %}" alt="Logo de Instagram"></a>
         </div>
   
         <div class="der_pie">
