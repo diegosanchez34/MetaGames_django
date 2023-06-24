@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio">
+    <meta name="keywords" content="games, videogames, pc, computers, gamers">
+    <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
+    <title>Administración</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"   />
+</head>
+
+<body class="cuerpo">
+    <nav class="izquierda">
+        <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games">
+
+        <ul>
+          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">Inicio</a></li>
+          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="{% url 'nosotros' %}">Nosotros</a></li>
+          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="{% url 'retrogames' %}">Retro Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="{% url 'newgames' %}">New Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="{% url 'classicgames' %}">Classic Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> <a href="{% url 'contactanos' %}">Contacto</a></li>
+       </ul> 
+    </nav>
+
+    <main class="contenido">
+        <br>
+        <div class="titulo-pagina"><img src="{% static 'main/media/icons/config.svg' %}"><span>Panel de Administración</span></div>
+        
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
+                <h2 class="subtitulo">Agregar Videojuego</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="agregar/" method="POST" style="color: grey; background-color: #262628;">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-select" id="categoria" name="categoria" style="width: 100%;">
+                                    <option selected>Categoria</option>
+                                    {% for categoria in categorias %}                                    
+                                        <option value="{{categoria.id}}">{{categoria.nombre}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>                            
+                            <div class="form-group">
+                                <input type="number" id="precio" name="precio" class="form-control" placeholder="Precio">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>    
+                <br>
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-dismissible alert-dark">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong class="text-dark">{{ message }}</strong>
+                    </div>
+                    {% endfor %}
+                 {% endif %}                
+            </div>
+
+           
+            
+
+            <div class="col-sm-12 col-md-6 col-lg-9 col-xl-9">
+                <h2 class="subtitulo">Listado de Videojuegos</h2>
+                    <table class="table table-striped table-borderless table-dark" id="listadojuegos">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Juego</th>
+                                <th>Categoria</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for juego in juegos %}
+                            <tr>
+                                <td>{{juego.id}}</td>
+                                <td>{{juego.nombre}}</td>
+                                <td>{{juego.categoria.nombre}}</td>
+                                <td>{{juego.precio}}</td>
+
+                                <td><a href="edicionCurso/{{c.codigo}}" class="btn btn-info">Editar</a></td>
+                                <td><a href="eliminar/{{juego.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table> 
+                
+            </div>
+        </div>
+                
+    </main>
+
+    <footer class="pie">  
+        <div class="izq_pie">
+          <img class="logo_pie" src="{% static 'main/media\MetaGamesLogo_3.png' %}" alt="Logo de Meta-Games blanco">
+        </div>
+  
+        <div class="centro_pie">
+          <span>Siguenos en: </span>
+          <a href="https://www.instagram.com/"><img class="fa-instagram" src="{% static 'main/media/icons/instagram.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="{% static 'main/media/icons/facebook.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="{% static 'main/media/icons/twitter.svg' %}" alt="Logo de Instagram"></a>
+        </div>
+  
+        <div class="der_pie">
+          <span>MetaGames © 2023</span>
+        </div>      
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

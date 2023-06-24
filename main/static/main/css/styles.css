@@ -178,6 +178,14 @@
   opacity: 0.7;
 }
 
+.subtitulo {
+  color: rgb(243, 237, 237);
+  font-size: 30px;
+  font-weight: 500;
+  opacity: 0.7;
+  padding-bottom: 20px;
+}
+
 .titulo-pagina_con {
   padding-bottom: 20px;
   text-align: left;
@@ -534,6 +542,19 @@ th {
   border-radius: 30px;
 }
 
+.formulario_crud {
+  color: grey;
+  background-color: #262628;
+  width: 80%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 30px;
+}
+
+#categ{
+  width: 100%;
+}
+
 .formulario button{
   display: inline;
   flex-direction: row;
@@ -628,6 +649,16 @@ th {
   border-radius: 15px;
   margin-bottom: 3%;
 }
+
+#listadojuegos{
+  font-size: 20px;
+  text-align: center;
+  border: 0px;
+  border-radius: 15px;
+  margin: 0;
+}
+
+
 
 #tablajuegos img{
   vertical-align: middle;

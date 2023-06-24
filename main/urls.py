@@ -15,6 +15,10 @@ urlpatterns = [
     path('registrarse', views.registrarse, name='registrarse'),
     path('retrogames', views.retrogames, name='retrogames'),
     path('retrogames2', views.retrogames2, name='retrogames2'),
+    path('games', views.games, name='games'),
+    path('crud', views.crud, name='crud'),
+    path('agregar/', views.agregar, name='agregar'),
+    path('eliminar/<codigo>', views.eliminar, name='eliminar')
     
 
     
