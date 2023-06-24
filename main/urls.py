@@ -18,8 +18,7 @@ urlpatterns = [
     path('games', views.games, name='games'),
     path('crud', views.crud, name='crud'),
     path('agregar/', views.agregar, name='agregar'),
-    path('eliminar/<codigo>', views.eliminar, name='eliminar')
-    
-
-    
+    path('eliminar/<codigo>', views.eliminar, name='eliminar'),
+    path('editar/<codigo>', views.editar, name='editar'),
+    path('editarJuego/', views.editarJuego)    
 ]

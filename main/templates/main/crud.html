@@ -19,6 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"   />
+    <script src="{% static 'main/js/crud.js' %}"></script>
 </head>
 
 <body class="cuerpo">
@@ -51,7 +52,7 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-select" id="categoria" name="categoria" style="width: 100%;">
-                                    <option selected>Categoria</option>
+                                    <option value=1 selected>Categoria</option>
                                     {% for categoria in categorias %}                                    
                                         <option value="{{categoria.id}}">{{categoria.nombre}}</option>
                                     {% endfor %}
@@ -99,7 +100,7 @@
                                 <td>{{juego.categoria.nombre}}</td>
                                 <td>{{juego.precio}}</td>
 
-                                <td><a href="edicionCurso/{{c.codigo}}" class="btn btn-info">Editar</a></td>
+                                <td><a href="editar/{{juego.id}}" class="btn btn-info">Editar</a></td>
                                 <td><a href="eliminar/{{juego.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                             </tr>
                             {% endfor %}

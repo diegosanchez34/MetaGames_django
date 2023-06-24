@@ -65,7 +65,7 @@ def agregar(request):
 
     objCategoria = Categoria.objects.get(id = categoria)
     objJuego = Juego.objects.create(nombre=nombre, categoria=objCategoria, precio=precio)
-    messages.success(request, '¡Juego Agregado!')
+    messages.success(request, 'Juego Agregado')
     return redirect('crud')
 
 def eliminar(request, codigo):
@@ -76,28 +76,23 @@ def eliminar(request, codigo):
 
 def editar(request, codigo):
     juego = Juego.objects.get(id=codigo)
-    return render(request, "edicionCurso.html", {"curso": curso})
+    categorias = Categoria.objects.all()
+    context={"juego":juego,"categorias":categorias}
+    return render(request, "main/editar.html", context)
 
+def editarJuego(request):
+    codigo = request.POST['id']
+    nombre = request.POST['nombre']
+    precio = request.POST['precio']
+    categoria = request.POST['categoria']
 
-
-
-def editar(request, codigo):
-    curso = Curso.objects.get(codigo=codigo)
-    return render(request, "edicionCurso.html", {"curso": curso})
-
-
-def editarCurso(request):
-    codigo = request.POST['txtCodigo']
-    nombre = request.POST['txtNombre']
-    creditos = request.POST['numCreditos']
-
-    curso = Curso.objects.get(codigo=codigo)
-    curso.nombre = nombre
-    curso.creditos = creditos
-    curso.save()
-
-    messages.success(request, '¡Curso actualizado!')
-
-    return redirect('/')
-
+    objCategoria = Categoria.objects.get(id = categoria)
+    objJuego = Juego.objects.get(id=codigo)
     
+    objJuego.nombre = nombre
+    objJuego.categoria = objCategoria
+    objJuego.precio = precio
+    objJuego.save()
+
+    messages.success(request, 'Juego actualizado')
+    return redirect('crud')  
