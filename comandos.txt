@@ -1,11 +1,20 @@
 python -m venv ambiente_virtual 		//crear el ambiente virtual
 .\ambiente_virtual\Scripts\activate		//activar el ambiente virtual
-python -m pip install --upgrade pip   	//instalar pip en el ambiente virtual
-pip install django   				    //instalar django en el ambiente virtual
+
+python -m pip install --upgrade pip   	//instalar pip 
+pip install django   				    //instalar django 
+
 django-admin startproject MetaGames .	//crear el proyecto
+python manage.py makemigrations         //actualizar la base de datos
 python manage.py migrate			    //migrar la base de datos
 python manage.py runserver			    //correr el servidor
+python manage.py startapp main          //crear aplicaion
 python manage.py createsuperuser        //crear super usuario
     username: admin
     password: 123cuatro
-python manage.py startapp main          //crear aplicaion
+
+pip install pipreqs                     //instalar pipreqs
+pipreqs                                 //crear archivo requirements.txt
+
+python -m pip install Pillow            //instalar libreria pillow para manejar fotos
+

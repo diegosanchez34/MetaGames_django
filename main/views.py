@@ -59,12 +59,18 @@ def crud(request):
     return render(request, 'main/crud.html', context)
 
 def agregar(request):
-    nombre = request.POST['nombre']
-    precio = request.POST['precio']
     categoria = request.POST['categoria']
-
     objCategoria = Categoria.objects.get(id = categoria)
-    objJuego = Juego.objects.create(nombre=nombre, categoria=objCategoria, precio=precio)
+
+    objJuego = Juego()
+    objJuego.nombre = request.POST.get('nombre')
+    objJuego.precio = request.POST.get('precio')
+    objJuego.categoria = objCategoria
+    
+    if len(request.FILES) != 0:
+        objJuego.image = request.FILES['image']
+    
+    objJuego.save()
     messages.success(request, 'Juego Agregado')
     return redirect('crud')
 

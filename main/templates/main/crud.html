@@ -46,7 +46,7 @@
                 <h2 class="subtitulo">Agregar Videojuego</h2>
                 <div class="card">
                     <div class="card-body">
-                        <form action="agregar/" method="POST" style="color: grey; background-color: #262628;">
+                        <form action="agregar/" method="POST" enctype="multipart/form-data" style="color: grey; background-color: #262628;">
                             {% csrf_token %}
                             <div class="form-group">
                                 <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
@@ -61,6 +61,9 @@
                             </div>                            
                             <div class="form-group">
                                 <input type="number" id="precio" name="precio" class="form-control" placeholder="Precio">
+                            </div>
+                            <div class="form-group">
+                                <input type="file" id="image" name="image" class="form-control">
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
@@ -91,6 +94,7 @@
                                 <th>Juego</th>
                                 <th>Categoria</th>
                                 <th>Precio</th>
+                                <th>Portada</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -100,7 +104,11 @@
                                 <td>{{juego.nombre}}</td>
                                 <td>{{juego.categoria.nombre}}</td>
                                 <td>{{juego.precio}}</td>
-
+                                {%if juego.image %}
+                                    <td> <img src="{{juego.image.url}}" alt="portada" height="70"> </td>
+                                {% else %}
+                                    <td>Sin portada</td>
+                                {% endif %}
                                 <td><a href="editar/{{juego.id}}" class="btn btn-info">Editar</a></td>
                                 <td><a href="eliminar/{{juego.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
                             </tr>

@@ -14,7 +14,8 @@ class Juego(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50)
     categoria = models.ForeignKey('Categoria',on_delete=models.CASCADE, db_column='idCategoria')
-    precio = models.IntegerField() 
+    precio = models.IntegerField()
+    image = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         texto = "{0} ({1})"
