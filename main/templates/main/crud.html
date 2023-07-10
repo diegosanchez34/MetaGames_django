@@ -12,7 +12,6 @@
     <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
     <title>Administración</title>
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,25 +21,86 @@
     <script src="{% static 'main/js/crud.js' %}"></script>
 </head>
 
-<body class="cuerpo">
-    <nav class="izquierda">
-        <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games">
+<body id="body">
+    <header class="header">
+        <div class="icon__menu">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+        <div class="search">
+            <span class="uil uil-search"></span>
+            <input id="searchInput" placeholder="Buscar en Meta-Games" type="text" />
+            
+          </div>
 
-        <ul>
-          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">Inicio</a></li>
-          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="{% url 'nosotros' %}">Nosotros</a></li>
-          <li> <img src="{% static 'main/media/icons/games.svg' %}" alt="icon games"> <a href="{% url 'games' %}">Listado Videojuegos</a></li>
-          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="{% url 'retrogames' %}">Retro Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="{% url 'newgames' %}">New Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="{% url 'classicgames' %}">Classic Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> <a href="{% url 'contactanos' %}">Contacto</a></li>
-       </ul> 
-    </nav>
+          <div class="icons">
+            <a  class="fas fa-shopping-cart"></a>
+            <a href="{% url 'iniciarsesion' %}"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
+            </div>
 
-    <main class="contenido">
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="name__page">
+            <img class="logo" src="{% static 'main\media\MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games"> 
+        </div>
+        <div class="options__menu">	
+           
+                <div class="option">    
+                    <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">
+                    <h4>Inicio</h4>
+                </div>
+            </a>
+            <a href="{% url 'nosotros' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> 
+                    <h4>Nosotros</h4>
+                </div>
+            </a>
+            <a href="{% url 'games' %}"> <a href="#" class="selected">
+              <div class="option">
+                  <img src="{% static 'main/media/icons/games.svg' %}" alt="icon nosotros"> 
+                  <h4>Listado de Juegos</h4>
+              </div>
+          </a>
+            
+            <a href="{% url 'retrogames' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> 
+                    <h4>RetroGames</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'newgames' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos">
+                    <h4>New Games</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'classicgames' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> 
+                    <h4>Classic Games</h4>
+                </div>
+            </a>
+
+            <a href="{% url 'contactanos' %}">
+                <div class="option">
+                    <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> 
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <main >
         <br>
-        <div class="titulo-pagina"><img src="{% static 'main/media/icons/config.svg' %}"><span>Panel de Administración</span></div>
-        
+       
+        <h1 class="tittle"><img src="{% static 'main/media/icons/config.svg' %}" >Panel de <span>Administración</span></h1>
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3">
                 <h2 class="subtitulo">Agregar Videojuego</h2>
@@ -66,7 +126,7 @@
                                 <input type="file" id="image" name="image" class="form-control">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                                <button type="submit" class="btn-success btn-block text-white">Guardar</button>
                             </div>
                         </form>
                     </div>
@@ -87,7 +147,7 @@
 
             <div class="col-sm-12 col-md-6 col-lg-9 col-xl-9">
                 <h2 class="subtitulo">Listado de Videojuegos</h2>
-                    <table class="table table-striped table-borderless table-dark" id="listadojuegos">
+                    <table class="table1 table1-striped table1-borderless table1-dark" id="listadojuegos">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -109,8 +169,8 @@
                                 {% else %}
                                     <td>Sin portada</td>
                                 {% endif %}
-                                <td><a href="editar/{{juego.id}}" class="btn btn-info">Editar</a></td>
-                                <td><a href="eliminar/{{juego.id}}" class="btn btn-danger btnEliminacion">Eliminar</a></td>
+                                <td><a href="editar/{{juego.id}}" class="btn-info">Editar</a></td>
+                                <td><a href="eliminar/{{juego.id}}" class="btn-danger btnEliminacion">Eliminar</a></td>
                             </tr>
                             {% endfor %}
                         </tbody>
@@ -121,21 +181,45 @@
                 
     </main>
 
-    <footer class="pie">  
-        <div class="izq_pie">
-          <img class="logo_pie" src="{% static 'main/media\MetaGamesLogo_3.png' %}" alt="Logo de Meta-Games blanco">
-        </div>
-  
-        <div class="centro_pie">
-          <span>Siguenos en: </span>
-          <a href="https://www.instagram.com/"><img class="fa-instagram" src="{% static 'main/media/icons/instagram.svg' %}" alt="Logo de Instagram"></a>
-          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="{% static 'main/media/icons/facebook.svg' %}" alt="Logo de Instagram"></a>
-          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="{% static 'main/media/icons/twitter.svg' %}" alt="Logo de Instagram"></a>
-        </div>
-  
-        <div class="der_pie">
-          <span>MetaGames © 2023</span>
-        </div>      
+    <footer>
+        <section class="footer" id="contact">
+           
+            <div class="box-container">
+    
+              
+                
+               
+                
+                <div class="box">
+                  
+                        <img src="{% static 'main\media\MetaGamesLogo_21.png' %}" alt="logo" width="220" height="30">
+                  
+                </div > 
+                <div class="box">
+                    <h3>Detalles de Contacto</h3>
+                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
+                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
+                    <a href="#" class="link"><i class="fas fa-envelope"></i>metaguid.duoc@gmail.com</a>
+                    <a href="#" class="link"><i class="fas fa-map"></i>Egaña 323, Puerto Montt Chile</a>
+                  
+                </div>
+    
+                <div class="box">  <h3>Siguenos en</h3>
+                   <div class="share">
+                
+                        <a href="" class="fab fa-facebook-f"></a>
+                        <a href="" class="fab fa-twitter"></a>
+                        <a href="" class="fab fa-instagram"></a>
+                        <a href="" class="fab fa-youtube"></a>
+                    </div>
+                </div>
+    
+                
+            </div>
+            <div class="credit"><span>Meta Games |</span>| Derechos Reservados</div>
+            
+    
+        </section>
     </footer>
 
 
