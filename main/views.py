@@ -5,8 +5,7 @@ from django.contrib import messages
 # Create your views here.
 
 def index(request):
-    juegos = Juego.objects.all()
-    context={"juegos":juegos}
+    context={}
     return render(request, 'main/index.html', context)
 
 def games(request):

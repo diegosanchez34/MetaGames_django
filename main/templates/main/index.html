@@ -2,175 +2,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio">
-  <meta name="keywords" content="games, videogames, pc, computers, gamers">
-  <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio">
+    <meta name="keywords" content="games, videogames, pc, computers, gamers">
+    <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
+    <title>Meta Games</title>
     <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="{% static 'main/js/API.js' %}"></script>
     <script src="{% static 'main/js/main.js' %}"></script>
-    <script src="{% static 'main/js/script.js' %}"></script>
-    <script src="{% static 'main/js/script2.js' %}"></script>
-<script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
-    <title>MetaGames</title>
-
-    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
-
-    
 </head>
-<body id="body">
-    
-    <header class="header">
-        <div class="icon__menu">
-            <i class="fas fa-bars" id="btn_open"></i>
-        </div>
+
+<body class="cuerpo"> 
+    <nav class="izquierda">
+        <img class="logo" src="{% static 'main\media\MetaGamesLogo_2.png' %}" alt="Logo de Meta-Gamess"> 
+
+        <ul>
+          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">Inicio</a></li>
+          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="{% url 'nosotros' %}">Nosotros</a></li>
+          <li> <img src="{% static 'main/media/icons/games.svg' %}" alt="icon games"> <a href="{% url 'games' %}">Listado Videojuegos</a></li>
+          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="{% url 'retrogames' %}">Retro Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="{% url 'newgames' %}">New Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="{% url 'classicgames' %}">Classic Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}" alt="icon contacto"> <a href="{% url 'contactanos' %}">Contacto</a></li>
+       </ul>
+    </nav>
+
+    <header class="cabecera">
+     
         <div class="search">
-            <span class="uil uil-search"></span>
-            <input id="searchInput" placeholder="Buscar en Meta-Games" type="text" />
-            
-          </div>
+          <span class="uil uil-search"></span>
+          <input id="searchInput" placeholder="Buscar...." type="text" />
+        </div>
 
-          <div class="icons">
-            <a  class="fas fa-shopping-cart"></a>
-            <a href="{% url 'iniciarsesion' %}"  class="fa-sharp fa-solid fa-user" aria-placeholder=""> </a>
-            </div>
-
+        <a class="sing-in" href="{% url 'registrarse' %}">Registrarse</a>
+        <a class="log-in" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a>
+       
     </header>
 
-    <div class="menu__side" id="menu_side">
+    <main class="contenido">
+      
+      <div class="titulo-pagina"><span>¡Bienvenido a Meta Games!</span></div>
 
-        <div class="name__page">
-            <img class="logo" src="{% static 'main\media\MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games"> 
-        </div>
-        <div class="options__menu">	
-            <a href="#" class="selected">
-                <div class="option">    
-                    <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">
-                    <h4>Inicio</h4>
-                </div>
-            </a>
-            <a href="{% url 'nosotros' %}">
-                <div class="option">
-                    <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> 
-                    <h4>Nosotros</h4>
-                </div>
-            </a>
-            <a href="{% url 'games' %}">
-              <div class="option">
-                  <img src="{% static 'main/media/icons/games.svg' %}" alt="icon nosotros"> 
-                  <h4>Listado de Juegos</h4>
-              </div>
-          </a>
+      <div class="slide">
+        <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1"name="slide" aria-hidden="true" hidden="" checked="checked">
+            <div class="slide-item"><a href="http://naruto-game.bngames.net/"><img src="{% static 'main\media\sliders\01.png' %}" alt="img slider"></a></div>
+
+            <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item"><a href="https://playstation.com/god-of-war"><img src="{% static 'main\media\sliders\02.png' %}" alt="img slider2"></a></div>
+
+            <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item"><a href="https://www.rockstargames.com/es/games/reddeadredemption2"> <img src="{% static 'main\media\sliders\03.png' %}" alt="img slider3"> </a></div>
             
-            <a href="{% url 'retrogames' %}">
-                <div class="option">
-                    <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> 
-                    <h4>RetroGames</h4>
-                </div>
-            </a>
+            <label for="slide-2" class="slide-control next control-1"><img src="{% static 'main\media\icons\right-arrow.svg' %}" alt="arrow"></label>
+            <label for="slide-3" class="slide-control next control-2"><img src="{% static 'main\media\icons\right-arrow.svg' %}" alt="arrow"></label> 
+            <label for="slide-1" class="slide-control next control-3"><img src="{% static 'main\media\icons\right-arrow.svg' %}" alt="arrow"></label>
 
-            <a href="{% url 'newgames' %}">
-                <div class="option">
-                    <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos">
-                    <h4>New Games</h4>
-                </div>
-            </a>
-
-            <a href="{% url 'classicgames' %}">
-                <div class="option">
-                    <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> 
-                    <h4>Classic Games</h4>
-                </div>
-            </a>
-
-            <a href="{% url 'contactanos' %}">
-                <div class="option">
-                    <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> 
-                    <h4>Contacto</h4>
-                </div>
-            </a>
-
+            <label for="slide-3" class="slide-control prev control-1"><img src="{% static 'main\media\icons\left-arrow.svg' %}" alt="arrow"></label>
+            <label for="slide-1" class="slide-control prev control-2"><img src="{% static 'main\media\icons\left-arrow.svg' %}" alt="arrow"></label>
+            <label for="slide-2" class="slide-control prev control-3"><img src="{% static 'main\media\icons\left-arrow.svg' %}" alt="arrow"></label>
+                       
+            <ol class="slide-indicador">
+                <li><label for="slide-1" class="slide-circulo">•</label></li>
+                <li><label for="slide-2" class="slide-circulo">•</label></li>
+                <li><label for="slide-3" class="slide-circulo">•</label></li>
+            </ol>
         </div>
-
-    </div>
-
-    <main>
-
-     
-          
-          <div class="carrito">
-            <h2>Carrito de compras</h2>
-            <ul class="lista-carrito"></ul>
-            <p class="total">Total: $0</p>
-            <button class="vaciar-carrito">Vaciar carrito</button>
-            <button class="comprar">Comprar</button>
-          </div>
-        
-          <div class="modal">
-            <div class="modal-contenido">
-              <h2>Confirmar compra</h2>
-              <p>¿Estás seguro de que deseas realizar la compra?</p>
-              <button class="cancelar-compra">Cancelar</button>
-              <button class="confirmar-compra">Confirmar</button>
-            </div>
-          </div>
-
-          
-        <h1 class="tittle">Bienvenido a <span> Meta Games</span></h1>
-        <div class="slide">
-            <div class="slide-inner">
-                <input class="slide-open" type="radio" id="slide-1"name="slide" aria-hidden="true" hidden="" checked="checked">
-                <div class="slide-item"><a href="http://naruto-game.bngames.net/"><img src="{% static 'main\media\sliders\01.png' %}" alt="img slider"></a></div>
-    
-                <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-                <div class="slide-item"><a href="https://playstation.com/god-of-war"><img src="{% static 'main\media\sliders\02.png' %}" alt="img slider2"></a></div>
-    
-                <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-                <div class="slide-item"><a href="https://www.rockstargames.com/es/games/reddeadredemption2"> <img src="{% static 'main\media\sliders\03.png' %}" alt="img slider3"> </a></div>
-                
-                <label for="slide-2" class="slide-control next control-1"><img src="{% static 'main\media\icons\right-arrow.svg' %}" alt="arrow"></label>
-                <label for="slide-3" class="slide-control next control-2"><img src="{% static 'main\media\icons\right-arrow.svg' %}" alt="arrow"></label> 
-                <label for="slide-1" class="slide-control next control-3"><img src="{% static 'main\media\icons\right-arrow.svg' %}"alt="arrow"></label>
-    
-                <label for="slide-3" class="slide-control prev control-1"><img src="{% static 'main\media\icons\left-arrow.svg' %}"alt="arrow"></label>
-                <label for="slide-1" class="slide-control prev control-2"><img src="{% static 'main\media\icons\left-arrow.svg' %}"alt="arrow"></label>
-                <label for="slide-2" class="slide-control prev control-3"><img src="{% static 'main\media\icons\left-arrow.svg' %}"alt="arrow"></label>
-                           
-                <ol class="slide-indicador">
-                    <li><label for="slide-1" class="slide-circulo">•</label></li>
-                    <li><label for="slide-2" class="slide-circulo">•</label></li>
-                    <li><label for="slide-3" class="slide-circulo">•</label></li>
-                </ol>
-            </div>
-          </div>
+      </div>
 
       <div class="titulo-pagina"><span>Juegos Destacados</span></div>
 
-      <div class="container-fluid px-4">
-        <div class="row">
-          {% for juego in juegos %}
-            {% if juego.id == 1 or juego.id == 2 or juego.id == 3 or juego.id == 4%}
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-              <div class="mb-5 card" id="game">
-                <img class="card-img-top" src="{{juego.image.url}}" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">{{juego.nombre}}</h5>
-                  <p class="card-text">${{juego.precio}}</p>
-                  <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-              </div> 
+      <section class="fila">
+        <div class="image-container">
+          <div class="card" data-categoria="Accion" data-categoria="Mundo-Abierto" style="width: 18rem;" id="game">
+              <img class="card-img-top" src="{% static 'main/media/classic/gta52.jpg' %}" alt="Card image cap">
+              <div class="word-overlay">Accion/Mundo Abierto</div>
+              <div class="card-body">
+                <h5 class="card-title">Grand Theft Auto V</h5>
+                <p class="card-text">$5.000</p>
+                <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+              </div>
+              </div>
+          </div>
+
+          <div class="image-container">
+          <div class="card" data-categoria:="Carreras" data-categoria:="Automoviles" style="width: 18rem;" id="game">
+            <img class="card-img-top" src="{% static 'main/media/new/forza_horizon_5 (1).jpg' %}" alt="Card image cap">
+            <div class="word-overlay">Carreras/Automoviles</div>
+            <div class="card-body">
+              <h5 class="card-title">Forza Horizon 5</h5>
+              <p class="card-text">$5.000</p>
+              <a href="torrents/forzahorizon5.torrent" class="btn btn-dark btn-block">Descargar</a>
             </div>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
+            </div>
+          </div>
+
+          <div class="image-container">
+          <div class="card" data-categoria:="Accion" data-categoria:="RPG" style="width: 18rem;" id="game">
+            <img class="card-img-top" src="{% static 'main/media/new/elden_ring.jpg' %}" alt="Card image cap">
+            <div class="word-overlay">Accion/RPG</div>
+            <div class="card-body">
+              <h5 class="card-title">Elden Ring</h5>
+              <p class="card-text">$5.000</p>
+              <a href="torrents/thewitcher3.torrent" class="btn btn-dark btn-block">Descargar</a>
+            </div>
+            </div>
+          </div>
+          
+          <div class="image-container">
+          <div class="card" data-categoria:="Accion" data-categoria:="RPG"  style="width: 18rem;" id="game">
+            <img class="card-img-top" src="{% static 'main/media/new/the_witcher_3.jpg' %}" alt="Card image cap">
+            <div class="word-overlay">Accion/RPG</div>
+            <div class="card-body">
+              <h5 class="card-title">The Witcher 3</h5>
+              <p class="card-text">$5.000</p>
+              <a href="https://www.gamestorrents.fm/wp-content/uploads/files/1672233001-ELDEN.RING.Deluxe.Edition.v1.08.1-P2P.torrent" class="btn btn-dark btn-block">Descargar</a>
+            </div>
+            </div>
+          </div>
+        
+      </section>
 
       <div class="titulo-pagina"><span>Tabla de puntuación de videojuegos</span></div>
 
@@ -191,52 +149,27 @@
       
       <button type="button" class="btn btn-dark " id="traer"> Presiona aqui para llenar la tabla </button>
     </main>
-
-    <footer>
-        <section class="footer" id="contact">
-           
-            <div class="box-container">
-    
               
-                
-               
-                
-                <div class="box">
-                  
-                        <img src="{% static 'main\media\MetaGamesLogo_21.png' %}" alt="logo" width="220" height="30">
-                  
-                </div > 
-                <div class="box">
-                    <h3>Detalles de Contacto</h3>
-                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
-                    <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
-                    <a href="#" class="link"><i class="fas fa-envelope"></i>metaguid.duoc@gmail.com</a>
-                    <a href="#" class="link"><i class="fas fa-map"></i>Egaña 323, Puerto Montt Chile</a>
-                  
-                </div>
-    
-                <div class="box">  <h3>Siguenos en</h3>
-                   <div class="share">
-                
-                        <a href="" class="fab fa-facebook-f"></a>
-                        <a href="" class="fab fa-twitter"></a>
-                        <a href="" class="fab fa-instagram"></a>
-                        <a href="" class="fab fa-youtube"></a>
-                    </div>
-                </div>
-    
-                
-            </div>
-            <div class="credit"><span>Meta Games |</span>| Derechos Reservados</div>
-            
-    
-        </section>
+    <footer class="pie">  
+      <div class="izq_pie">
+        <img class="logo_pie" src="{% static 'main/media/MetaGamesLogo_3.png' %}" alt="Logo de Meta-Games blanco">
+      </div>
+
+      <div class="centro_pie">
+        <span>Siguenos en: </span>
+        <a href="https://www.instagram.com/"><img class="fa-instagram" src="{% static 'main/media/icons/instagram.svg' %}" alt="Logo de Instagram"></a>
+        <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="{% static 'main/media/icons/facebook.svg' %}" alt="Logo de Instagram"></a>
+        <a href="https://twitter.com/"><img class="fa-google-plus-g" src="{% static 'main/media/icons/twitter.svg' %}" alt="Logo de Instagram"></a>
+      </div>
+
+      <div class="der_pie">
+        <span>MetaGames © 2023</span>
+      </div>      
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"> </script>
-   
 </body>
 </html>
