@@ -57,218 +57,23 @@
     <main class="contenido">
         <div class="titulo-pagina"><img src="{% static 'main/media/icons/Nuevos.svg' %}"><span>Juegos Nuevos</span></div>
         
-        <!-- Seccion 1-->
-
-        <section class="fila">
-          <div class="image-container">
-            <div class="card" data-categoria:="RPG" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'main/media/new/elden_ring.jpg' %}" alt="Card image cap" >
-                <div class="word-overlay">RPG/Mundo Abierto</div>
-                <div class="card-body">
-                  <h5 class="card-title">Elden Ring</h5>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/eldenring.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-                </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/reddead.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/Mundo Abierto</div>
-              <div class="card-body">
-                <h5 class="card-title">Red Dead Redemption II</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/reddeadredemption2.torrent" class="btn btn-dark btn-block">Descargar</a>
+        <div class="container-fluid px-4">
+          <div class="row">
+            {% for juego in juegos %}
+              {% if juego.categoria.id == 1%}
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="mb-5 card" id="game">
+                  <img class="card-img-top" src="{{juego.image.url}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{juego.nombre}}</h5>
+                    <p class="card-text">${{juego.precio}}</p>
+                    <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+                  </div>
+                </div> 
               </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="RPG" id="game" style="width: 18rem;" >
-              <img class="card-img-top" src="{% static 'main/media/new/the_witcher_3.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/RPG</div>
-              <div class="card-body">
-                <h5 class="card-title">The Witcher 3</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/thewitcher3.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Aventura" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/a-way-out.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/Aventura</div>
-              <div class="card-body">
-                <h5 class="card-title">A Way Out</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/awayout.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-          
-        </section>
-
-        <!-- Seccion 2-->
-        <section class="fila">
-          <div class="image-container">
-            <div class="card" data-categoria:="Horror" data-categoria:="Survival" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'main/media/new/diying_light (1).jpg' %}" alt="Card image cap" >
-                <div class="word-overlay">Horror/Survival</div>
-                <div class="card-body">
-                  <h5 class="card-title">Dying Light</h5>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/DyingLight.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-                </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Carreras" data-categoria:="Automoviles" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/forza_horizon_5 (1).jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Carreras/Automoviles</div>
-              <div class="card-body">
-                <h5 class="card-title">Forza Horizon 5</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/forzahorizon5.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/half life_alyx.jpg' %}" alt="Card image cap">
-              <div class="word-overlay">Accion/Shooter</div>
-              <div class="card-body">
-                <h5 class="card-title">Half-Life: Alyx</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/hlalyx.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/borderlands 3.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/Shooter</div>
-              <div class="card-body">
-                <h5 class="card-title">Borderlands 3</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/borderlans3.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-          
-        </section>
-
-        <!-- Seccion 3-->
-        <section class="fila">
-          <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Survival" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'main/media/new/residentevil8.png' %}" alt="Card image cap" >
-                <div class="word-overlay">Accion/Survival</div>
-                <div class="card-body">
-                  <h5 class="card-title">Resident Evil 8</h5>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/residentevil8.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-                </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Survival" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/residentevil7.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/Survival</div>
-              <div class="card-body">
-                <h5 class="card-title">Resident Evil 7</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/residentevil7.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="RPG" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/Horizon-Zero-Dawn-Complete-Edition - -PC-Steam.jpg' %}" alt="Card image cap">
-              <div class="word-overlay">RPG/Mundo Abierto</div>
-              <div class="card-body">
-                <h5 class="card-title">Horizon Zero Down</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/horizon zero down.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Aventura" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/A_Plague_Tale_Innocenc.jpeg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/Aventura</div>
-              <div class="card-body">
-                <h5 class="card-title">A Plague Tale: Innocense</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/a plague tale innocense.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-          
-        </section>
-
-        <!-- Seccion 4-->
-        <section class="fila">
-          <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'main/media/new/bo3-landig-bo3-boxart (1).jpg' %} " alt="Card image cap" >
-                <div class="word-overlay">Accion/Shooter</div>
-                <div class="card-body">
-                  <h5 class="card-title">COD: Black Ops 3</h5>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/Call.of_.Duty_.Black_.Ops_.III_.Zombies.Chronicles-RELOADED.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-                </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/farcry6.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/Mundo Abierto</div>
-              <div class="card-body">
-                <h5 class="card-title">Far Cry 6</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/far cry 6.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Carreras" data-categoria:="Automoviles" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/forzahorizon4.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Carreras/Automoviles</div>
-              <div class="card-body">
-                <h5 class="card-title">Forza Horizon 4</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/forzahorizon4.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-            
-            <div class="image-container">
-            <div class="card" data-categoria:="Accion" data-categoria:="Aventura" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/new/gow2018.jpg' %}" alt="Card image cap" >
-              <div class="word-overlay">Accion/Aventura</div>
-              <div class="card-body">
-                <h5 class="card-title">God Of War (2018)</h5>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/gow2018.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-            </div>
-          
-        </section>
-
-        
-        <div class="navegacion">
-            <a class="boton" href="{% url 'newgames2' %}">SIGUIENTE</a>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
     </main>
 

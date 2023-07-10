@@ -56,223 +56,23 @@
   <main class="contenido">
     <div class="titulo-pagina"><img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"><span>Juegos Clasicos</span></div>
 
-
-    <!-- Seccion 1-->
-    <section class="fila">
-      <div class="image-container">
-        <div class="card" data-categoria:="Accion" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-          <img class="card-img-top" src="{% static 'main/media/classic/gta52.jpg' %}" alt="Card image cap">
-          <div class="word-overlay">Accion/Mundo Abierto</div>
-          <div class="card-body">
-            <h5 class="card-title">Grand Theft Auto V</h5>
-            <p class="card-text">$5.000</p>
-            <a href="../torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+    <div class="container-fluid px-4">
+      <div class="row">
+        {% for juego in juegos %}
+          {% if juego.categoria.id == 2%}
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="mb-5 card" id="game">
+              <img class="card-img-top" src="{{juego.image.url}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{juego.nombre}}</h5>
+                <p class="card-text">${{juego.precio}}</p>
+                <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+              </div>
+            </div> 
           </div>
-        </div>
+          {% endif %}
+        {% endfor %}
       </div>
-
-      <div class="image-container">
-        <div class="card" data-categoria:="Accion" data-categoria:="RPG" id="game" style="width: 18rem;">
-          <img class="card-img-top" src="{% static 'main/media/classic/masseffect2.jpg' %}" alt="Card image cap">
-          <div class="word-overlay">Accion/RPG</div>
-          <div class="card-body">
-            <h5 class="card-title">Mass Effect 2</h5>
-            <p class="card-text">$5.000</p>
-            <a href="../torrents/masseffect2.torrent" class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Puzzle" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/portal_2 (1).jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Puzzle</div>
-        <div class="card-body">
-          <h5 class="card-title">Portal 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Tportal2.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-      </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/batmanac.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Mundo Abierto</div>
-        <div class="card-body">
-          <h5 class="card-title">Batman Arkham City</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Batman-Arkham-City-GOTY-[MULTI11][Steam-Edition][P2P]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Seccion 2-->
-    <section class="fila">
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/farcrydosdos.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Far Cry 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Farcry-2-[Spanish][PCDVD][REPACK][By-Otto]-(Torrent) (1).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/half life_2.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Half-Life 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/halflife2.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/bioshock 1 remastered.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">BioShock</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/bioshockremas.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/bioshock_2.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">BioShock 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/bioshock2.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Seccion 3-->
-    <section class="fila">
-      <div class="image-container">
-      <div class="card" data-categoria:="Estrategia" data-categoria:="Sci-Fi" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/StarCraft2 (2).jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Estrategia/Sci-Fi</div>
-        <div class="card-body">
-          <h5 class="card-title">StarCraft 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/StarCraft-II-Heart-Of-The-Swarm-[MULTI][PROPER][RELOADED]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Aventura" data-categoria:="Survival" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/7dtd.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Aventura/Survival</div>
-        <div class="card-body">
-          <h5 class="card-title">7 Days To Die</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/7daystodie.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="RPG" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/skyrimm (1).jpeg' %}" alt="Card image cap">
-        <div class="word-overlay">RPG/Mundo Abierto</div>
-        <div class="card-body">
-          <h5 class="card-title">Skyrim
-          </h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/bioshockremas.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Aventura" data-categoria:="Mundo-Abierto" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/assassins_creed_blag_flag (1).jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Aventura/Mundo Abierto</div>
-        <div class="card-body">
-          <h5 class="card-title">Assassin's Creed IV</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/BlackFlag.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- Seccion 4-->
-    <section class="fila">
-      <div class="image-container">
-      <div class="card" data-categoria:="Aventura" data-categoria:="Horror" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/alan_wake.png' %}" alt="Card image cap">
-        <div class="word-overlay">Aventura/Horror</div>
-        <div class="card-body">
-          <h5 class="card-title">Alan Wake</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/AlanWake.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/bioshock_infinity.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Bioshock Infinite</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/BioShock-Infinite-Complete-Edition[ESP][PROPHET]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Shooter" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/borderlands_2.jpg' %}" alt="Card image cap">
-        <div class="word-overlay">Accion/Shooter</div>
-        <div class="card-body">
-          <h5 class="card-title">Borderlands 2</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/Borderlands-2-Game-Of-The-Year-Edition-[MULTI6][V1.802-Incl-All-DLC][Royalgamer06]-(Torrent).torrent"
-            class="btn btn-dark btn-block">Descargar</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="image-container">
-      <div class="card" data-categoria:="Accion" data-categoria:="Horror" id="game" style="width: 18rem;">
-        <img class="card-img-top" src="{% static 'main/media/classic/resident_evil_6_poster_by_jevangood_d5ja3uu-pre (1).jpg' %}">
-        <div class="word-overlay">Accion/Horror</div>
-        <div class="card-body">
-          <h5 class="card-title">Resident Evil 6</h5>
-          <p class="card-text">$5.000</p>
-          <a href="../torrents/residentevil6.torrent" class="btn btn-dark btn-block">Descargar</a>
-        </div>
-        </div>
-      </div>
-
-    </section>
-
-    <div class="navegacion">
-      <a class="boton" href="{% url 'classicgames2' %}">SIGUIENTE</a>
     </div>
 
   </main>

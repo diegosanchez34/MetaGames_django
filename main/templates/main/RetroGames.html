@@ -58,172 +58,25 @@
         
         <div class="titulo-pagina"><img src="{% static 'main/media/icons/Retro.svg' %}"><span>Juegos Retro</span></div>
 
-        <!-- Seccion 1-->
-
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;" >
-                <img class="card-img-top" src="{% static 'main/media/retro/ageofempires2.jpg' %}" alt="Card image cap" >
-                <div class="card-body">
-                  <h4 class="card-title">Age Of Empires 2</h4>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/ageofempires2.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/aloneinthedark.jpg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Alone In The Dark</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/alone-in-the-dark-1.torrent" class="btn btn-dark btn-block">Descargar</a>
+        <div class="container-fluid px-4">
+          <div class="row">
+            {% for juego in juegos %}
+              {% if juego.categoria.id == 3%}
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="mb-5 card" id="game">
+                  <img class="card-img-top" src="{{juego.image.url}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{juego.nombre}}</h5>
+                    <p class="card-text">${{juego.precio}}</p>
+                    <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+                  </div>
+                </div> 
               </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/anotherworld.jpg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Another World</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/another-world-20th-anniversary-edition.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/baldursgate2 (1).jpg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Baldur's Gate II</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/baldurs-gate-ii.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-
-        <!-- Seccion 2-->
-
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'main/media/retro/diablo.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                  <h4 class="card-title">Diablo</h4>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/D.1.A.B.L.0.1. [BajarJuegosPCGratis.Com].torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/doom.png' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Doom</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/doom.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/doom2 (2).png' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Doom 2</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/doom-2.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/fallout2.jpg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Fallout 2</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/fallout-2.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-
-        <!-- Seccion 3-->
-
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'main/media/retro/fifa98.jpg' %}" alt="Card image cap" >
-                <div class="card-body">
-                  <h4 class="card-title">Fifa 98</h4>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/fifa-98-road-to-world-cup.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/finalfantasy3.jpeg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Final Fantasy III</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/final-fantasy-3.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/grimfandango.jpg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Grim Fandango</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/grimfandango.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/jalflife.png' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Half-Life</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/half_life.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-        
-        <!-- Seccion 4-->
-        <section class="fila">
-            <div class="card" id="game" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'main/media/retro/Legacy of Kain Soul Reaver 2.jpg' %}" alt="Card image cap" >
-                <div class="card-body">
-                  <h6 class="card-title">Legacy Of Kain Soul Reaver 2</h6>
-                  <p class="card-text">$5.000</p>
-                  <a href="../torrents/legacy-of-kain-soul-reaver.torrent" class="btn btn-dark btn-block">Descargar</a>
-                </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/loom.jpg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Loom</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/loom.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/metalgearsolid.jpg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Metal Gear Solid</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/metal-gear-solid.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-  
-            <div class="card" id="game" style="width: 18rem;">
-              <img class="card-img-top" src="{% static 'main/media/retro/Planescape Torment.jpeg' %}" alt="Card image cap" >
-              <div class="card-body">
-                <h4 class="card-title">Planescape Torment</h4>
-                <p class="card-text">$5.000</p>
-                <a href="../torrents/planescape-torment-enhanced-edition.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-            </div>
-          
-        </section>
-
-        <div class="navegacion">
-            <a class="boton" href="{% url 'retrogames2' %}">SIGUIENTE</a>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
+
     </main>
 
     <footer class="pie">  
