@@ -8,7 +8,7 @@
     <meta name="description" content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio">
     <meta name="keywords" content="games, videogames, pc, computers, gamers">
     <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
-    <title>Contactanos</title>
+    <title>Registrarse</title>
     <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}">   
@@ -19,119 +19,57 @@
 </head>
 
 <body class="cuerpo">
-    <nav class="izquierda">
-        <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games"> 
+  <br><br>
+  <div class="titulo-pagina" ><img src="{% static 'main/media/icons/log-in.svg' %}"><span>Iniciar Sesión</span></div>
 
-        <ul>
-          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">Inicio</a></li>
-          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="{% url 'nosotros' %}">Nosotros</a></li>
-          <li> <img src="{% static 'main/media/icons/games.svg' %}" alt="icon games"> <a href="{% url 'games' %}">Listado Videojuegos</a></li>
-          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="{% url 'retrogames' %}">Retro Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="{% url 'newgames' %}">New Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="{% url 'classicgames' %}">Classic Games</a></li>
-          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> <a href="{% url 'contactanos' %}">Contacto</a></li>
-     </ul> 
-    </nav>
+    <section class="">
+      <div class="px-md-5 text-center text-lg-start" >
+        <div class="container">
+          <div class="row gx-lg-5 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1 class="my-5 display-3 fw-bold ls-tight">
+                Tu portal hacia <br />
+                <span class="text-primary">tus juegos favoritos</span>
+              </h1>
+              <p style="color: hsl(217, 10%, 50.8%)">
+                Estamos aquí para ayudarte a encontrar ese juego que tanto anhelas. Sumérgete en emocionantes aventuras, desafía tus habilidades y disfruta de horas de entretenimiento. 
+               </p>
+            </div>
 
-    <header class="cabecera">
-      <div class="search">
-        <span class="uil uil-search">
-        </span>
-        <input placeholder="Buscar...." type="text" />
-        
-      </div>
-        <a class="sing-in" href="{% url 'registrarse' %}">Registrarse</a>
-        <a class="log-in" href="{% url 'iniciarsesion' %}">Iniciar Sesión</a>
-    </header>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <div class="card border-0" style="border-radius: 30px; background-color: #262628;">
+                <div class="card-body py-5 px-md-5" style="border-radius: 30px;">
+                  
+                  <form  method="POST" action="" class="formulario" style="padding: 0;">
+                    {% csrf_token %}
+                    <div class="form-outline mb-4">{{form.username}}</div>
+                    <div class="form-outline mb-4">{{form.password1}}</div>
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Iniciar Sesión</button>
+                    </div>
+                  </form>
 
-    <main class="contenido">
-
-      <div class="titulo-pagina"><img src="{% static 'main/media/icons\Contactanos.svg' %}"><span>Contáctanos</span></div>
-
-      <form class="formulario" id="formulario_contacto">
-        <h3>Escríbenos un mensaje</h3>
-        <h5>Nos pondremos en contacto contigo cuanto antes.</h5><br>
-        
-        <div class="row">
-          <div class="col">
-            <label for="nombre" class="label">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
-            <p id="error-nombre" class="error" style="display: none"></p>
-          </div>
-          <div class="col">
-            <label for="apellido">Apellido:</label> (opcional)
-            <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido">
-          </div>
-        </div><br>
-        <div class="row">
-          <div class="col">
-            <label for="correo" class="label">Email:</label>
-            <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo electrónico">
-            <p id="error-correo" class="error" style="display: none"></p>
-          </div>
-          <div class="col">
-            <label for="telefono">Teléfono:</label> (opcional)
-            <input type="tel" class="form-control" id="telefono" placeholder="Ingrese su número de teléfono">
-          </div>
-        </div><br>
-
-        <div class="form-group">
-          <label for="solicitud" class="label">Tipo de solicitud:</label>
-          <select class="form-control" id="solicitud">
-            <option value="">Seleccionar</option>
-            <option value="sugerencia">Sugerencia</option>
-            <option value="reclamo">Reclamo</option>
-            <option value="Consulta">Consulta</option>
-          </select>
-          <p id="error-solicitud" class="error" style="display: none"></p>
-        </div>
-
-        <div class="form-group">
-          <label for="mensaje" class="label">Mensaje:</label>
-          <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí."></textarea>
-          <p id="error-mensaje" class="error" style="display: none"></p>
-        </div><br>
-
-        <button type="submit" class="btn btn-secondary" id="enviar" >Enviar</button>
-        <button type="reset" class="btn btn-secondary" id="limpiar">Limpiar</button>
-      </form>
-
-      <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">¡Mensaje enviado con éxito!</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>Gracias por tus comentarios, te responderemos a la brevedad</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cerrar">Cerrar</button>
+                </div>
               </div>
             </div>
           </div>
+        </div>
       </div>
-    </main>
+    </section>
 
-    <footer class="pie">  
-      <div class="izq_pie">
-        <img class="logo_pie" src="{% static 'main/media\MetaGamesLogo_3.png' %}" alt="Logo de Meta-Games blanco">
-      </div>
+    <script>
+      var form_fields = document.getElementsByTagName('input')
+      form_fields[1].placeholder='Correo electrónico';
+      form_fields[2].placeholder='Contraseña';
 
-      <div class="centro_pie">
-        <span>Siguenos en: </span>
-        <a href="https://www.instagram.com/"><img class="fa-instagram" src="{% static 'main/media/icons/instagram.svg' %}" alt="Logo de Instagram"></a>
-        <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="{% static 'main/media/icons/facebook.svg' %}" alt="Logo de Instagram"></a>
-        <a href="https://twitter.com/"><img class="fa-google-plus-g" src="{% static 'main/media/icons/twitter.svg' %}" alt="Logo de Instagram"></a>
-      </div>
 
-      <div class="der_pie">
-        <span>MetaGames © 2023</span>
-      </div>      
-    </footer>
+      for (var field in form_fields){	
+      form_fields[field].className += ' form-control'
+      }
+    </script>
+
+    
+    
+
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <script src="{% static 'main/js/traducciones.js' %}"></script>

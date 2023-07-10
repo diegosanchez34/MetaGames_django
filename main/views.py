@@ -100,7 +100,13 @@ def registrarse(request):
     return render(request, 'main/Registrarse.html', context)
 
 def login(request):
-    context={}
+    form = CrearUsuario()
+    if request.method == 'POST':
+        form = CrearUsuario(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    context={'form':form}
     return render(request, 'main/log-in.html', context)
 
 def register(request):

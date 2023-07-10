@@ -16,8 +16,8 @@ urlpatterns = [
     path('eliminar/<codigo>', views.eliminar, name='eliminar'),
     path('editar/<codigo>', views.editar, name='editar'),
     path('editarJuego/', views.editarJuego),
-    path('login/', views.login),
-    path('register/', views.register),
+    path('login/', views.login,name='login'),
+    path('register/', views.register,name='register'),
     path('iniciarsesion', views.iniciarsesion, name='iniciarsesion'),  
     path('registrarse', views.registrarse, name='registrarse'),
 ]
