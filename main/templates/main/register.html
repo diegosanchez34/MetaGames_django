@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Somos la tienda de videojuegos con el mejor catalogo de videojuegos online y al mejor precio">
+    <meta name="keywords" content="games, videogames, pc, computers, gamers">
+    <meta name="author" content="Diego Sanchez, David Coo, Nicolas Carcamo">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="icon" href="{% static 'main/media/icons/favicon_2.svg' %}">   
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'main/js/validaciones.js' %}"></script>
+</head>
+
+<body class="cuerpo">
+  <br><br>
+  <div class="titulo-pagina" ><img src="{% static 'main/media/icons/register.svg' %}"><span>Crear usuario</span></div>
+
+    <section class="">
+      <div class="px-md-5 text-center text-lg-start" >
+        <div class="container">
+          <div class="row gx-lg-5 align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <h1 class="my-5 display-3 fw-bold ls-tight">
+                Tu portal hacia <br />
+                <span class="text-primary">tus juegos favoritos</span>
+              </h1>
+              <p style="color: hsl(217, 10%, 50.8%)">
+                Estamos aquí para ayudarte a encontrar ese juego que tanto anhelas. Sumérgete en emocionantes aventuras, desafía tus habilidades y disfruta de horas de entretenimiento. 
+               </p>
+            </div>
+
+            <div class="col-lg-6 mb-5 mb-lg-0">
+              <div class="card border-0" style="border-radius: 30px; background-color: #262628;">
+                <div class="card-body py-5 px-md-5" style="border-radius: 30px;">
+                  
+                  <form  method="POST" action="" class="formulario" style="padding: 0;">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">{{form.first_name}}</div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">{{form.last_name}} </div>
+                      </div>
+                    </div>
+                    <div class="form-outline mb-4">{{form.username}}</div>
+                    <div class="form-outline mb-4">{{form.password1}}</div>
+                    <div class="form-outline mb-4">{{form.password2}}</div>
+                    <button type="submit" class="btn btn-primary btn-block mb-4">Registrate</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      var form_fields = document.getElementsByTagName('input')
+      form_fields[1].placeholder='Nombre';
+      form_fields[2].placeholder='Apellido';
+      form_fields[3].placeholder='Correo electrónico';
+      form_fields[4].placeholder='Contraseña';
+      form_fields[5].placeholder='Reingrese contraseña';
+
+
+      for (var field in form_fields){	
+      form_fields[field].className += ' form-control'
+      }
+    </script>
+
+    
+    
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="{% static 'main/js/traducciones.js' %}"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

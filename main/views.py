@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Juego,Categoria
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
+from .forms import CrearUsuario
 
 # Create your views here.
 
@@ -23,10 +25,6 @@ def contactanos(request):
     context={}
     return render(request, 'main/Contactanos.html', context)
 
-def iniciarsesion(request):
-    context={}
-    return render(request, 'main/IniciarSesion.html', context)
-
 def newgames(request):
     juegos = Juego.objects.all()
     context={"juegos":juegos}
@@ -35,10 +33,6 @@ def newgames(request):
 def nosotros(request):
     context={}
     return render(request, 'main/Nosotros.html', context)
-
-def registrarse(request):
-    context={}
-    return render(request, 'main/Registrarse.html', context)
 
 def retrogames(request):
     juegos = Juego.objects.all()
@@ -96,3 +90,25 @@ def editarJuego(request):
 
     messages.success(request, 'Juego actualizado')
     return redirect('crud')  
+
+def iniciarsesion(request):
+    context={}
+    return render(request, 'main/IniciarSesion.html', context)
+
+def registrarse(request):
+    context={}
+    return render(request, 'main/Registrarse.html', context)
+
+def login(request):
+    context={}
+    return render(request, 'main/log-in.html', context)
+
+def register(request):
+    form = CrearUsuario()
+    if request.method == 'POST':
+        form = CrearUsuario(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    context={'form':form}
+    return render(request, 'main/register.html', context)
