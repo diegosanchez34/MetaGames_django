@@ -57,9 +57,23 @@
     <main class="contenido">
         
         <div class="titulo-pagina"><img src="{% static 'main/media/icons/games.svg' %}"><span>Listado de Videojuegos</span></div>
-        <div  style="text-align: center;"><img src="{% static 'main/media/cat.png' %}" height="400"></div>
-        <div class="titulo-pagina"><span>Estamos trabajando en esto...</span></div>
-
+        
+        <div class="container-fluid px-4">
+          <div class="row">
+            {% for juego in juegos %}
+              <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="mb-5 card" id="game">
+                  <img class="card-img-top" src="{{juego.image.url}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">{{juego.nombre}}</h5>
+                    <p class="card-text">${{juego.precio}}</p>
+                    <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+                  </div>
+                </div> 
+              </div>
+            {% endfor %}
+          </div>
+        </div>
         
     </main>
 

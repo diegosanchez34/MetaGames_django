@@ -9,7 +9,8 @@ def index(request):
     return render(request, 'main/index.html', context)
 
 def games(request):
-    context={}
+    juegos = Juego.objects.all()
+    context={"juegos":juegos}
     return render(request, 'main/games.html', context)
 
 def classicgames(request):
