@@ -32,16 +32,15 @@
     <nav class="izquierda">
         <img class="logo" src="{% static 'main/media/MetaGamesLogo_2.png' %}" alt="Logo de Meta-Games">
 
-     
         <ul>
-          <li> <a href="{% url 'index' %}"><img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"><p class="tol">Inicio</p></a></li>
-          <li> <a href="{% url 'nosotros' %}"><img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <p class="tol">Nosotros</p></a></li>
-          <li> <a href="{% url 'games' %}"><img src="{% static 'main/media/icons/games.svg' %}" alt="icon games"> <p class="tol">Listado Videojuegos</p></a></li>
-          <li> <a href="{% url 'retrogames' %}"><img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <p class="tol">Retro Games</p></a></li>
-          <li> <a href="{% url 'newgames' %}"> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"><p class="tol"> New Games</p></a></li>
-          <li> <a href="{% url 'classicgames' %}"><img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <p class="tol">Classic Games</p></a></li>
-          <li> <a href="{% url 'contactanos' %}"><img src="{% static 'main/media/icons/Contactanos.svg' %}" alt="icon contacto"><p class="tol"> Contacto</p></a></li>
-       </ul>
+          <li> <img src="{% static 'main/media/icons/Inicio.svg' %}" alt="icon inicio"> <a href="{% url 'index' %}">Inicio</a></li>
+          <li> <img src="{% static 'main/media/icons/Nosotros.svg' %}" alt="icon nosotros"> <a href="{% url 'nosotros' %}">Nosotros</a></li>
+          <li> <img src="{% static 'main/media/icons/games.svg' %}" alt="icon games"> <a href="{% url 'games' %}">Listado Videojuegos</a></li>
+          <li> <img src="{% static 'main/media/icons/Retro.svg' %}" alt="icon retrogames"> <a href="{% url 'retrogames' %}">Retro Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Nuevos.svg' %}" alt="icon nuevos"> <a href="{% url 'newgames' %}">New Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Clasicos.svg' %}" alt="icon clasicos"> <a href="{% url 'classicgames' %}">Classic Games</a></li>
+          <li> <img src="{% static 'main/media/icons/Contactanos.svg' %}"alt="icon contacto"> <a href="{% url 'contactanos' %}">Contacto</a></li>
+       </ul> 
     </nav>
 
     <header class="cabecera">
@@ -78,46 +77,22 @@
         
     </main>
 
-    <footer>
-      <section class="footer" id="contact">
-         
-          <div class="box-container">
+    <footer class="pie">  
+        <div class="izq_pie">
+          <img class="logo_pie" src="{% static 'main/media\MetaGamesLogo_3.png' %}" alt="Logo de Meta-Games blanco">
+        </div>
   
-            
-              
-             
-              
-              <div class="box">
-                
-                      <img src="{% static 'main\media\MetaGamesLogo_21.png' %}" alt="logo" width="220" height="30">
-                
-              </div > 
-              <div class="box">
-                  <h3>Detalles de Contacto</h3>
-                  <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
-                  <a href="#" class="link"><i class="fas fa-phone"></i>+56955889665</a>
-                  <a href="#" class="link"><i class="fas fa-envelope"></i>metaguid.duoc@gmail.com</a>
-                  <a href="#" class="link"><i class="fas fa-map"></i>Egaña 323, Puerto Montt Chile</a>
-                
-              </div>
+        <div class="centro_pie">
+          <span>Siguenos en: </span>
+          <a href="https://www.instagram.com/"><img class="fa-instagram" src="{% static 'main/media/icons/instagram.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="{% static 'main/media/icons/facebook.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="{% static 'main/media/icons/twitter.svg' %}" alt="Logo de Instagram"></a>
+        </div>
   
-              <div class="box">  <h3>Siguenos en</h3>
-                 <div class="share">
-              
-                      <a href="" class="fab fa-facebook-f"></a>
-                      <a href="" class="fab fa-twitter"></a>
-                      <a href="" class="fab fa-instagram"></a>
-                      <a href="" class="fab fa-youtube"></a>
-                  </div>
-              </div>
-  
-              
-          </div>
-          <div class="credit"><span>Meta Games |</span>| Derechos Reservados</div>
-          
-  
-      </section>
-  </footer>
+        <div class="der_pie">
+          <span>MetaGames © 2023</span>
+        </div>      
+    </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
