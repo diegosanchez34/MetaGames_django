@@ -79,54 +79,25 @@
 
       <div class="titulo-pagina"><span>Juegos Destacados</span></div>
 
-      <section class="fila">
-        <div class="image-container">
-          <div class="card" data-categoria="Accion" data-categoria="Mundo-Abierto" style="width: 18rem;" id="game">
-              <img class="card-img-top" src="{% static 'main/media/classic/gta52.jpg' %}" alt="Card image cap">
-              <div class="word-overlay">Accion/Mundo Abierto</div>
-              <div class="card-body">
-                <h5 class="card-title">Grand Theft Auto V</h5>
-                <p class="card-text">$5.000</p>
-                <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
-              </div>
-              </div>
-          </div>
-
-          <div class="image-container">
-          <div class="card" data-categoria:="Carreras" data-categoria:="Automoviles" style="width: 18rem;" id="game">
-            <img class="card-img-top" src="{% static 'main/media/new/forza_horizon_5 (1).jpg' %}" alt="Card image cap">
-            <div class="word-overlay">Carreras/Automoviles</div>
-            <div class="card-body">
-              <h5 class="card-title">Forza Horizon 5</h5>
-              <p class="card-text">$5.000</p>
-              <a href="torrents/forzahorizon5.torrent" class="btn btn-dark btn-block">Descargar</a>
+      <div class="container-fluid px-4">
+        <div class="row">
+          {% for juego in juegos %}
+            {% if juego.id == 1 or juego.id == 2 or juego.id == 3 or juego.id == 4 %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+              <div class="mb-5 card" id="game">
+                <img class="card-img-top" src="{{juego.image.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{juego.nombre}}</h5>
+                  <p class="card-text">${{juego.precio}}</p>
+                  <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+                </div>
+              </div> 
             </div>
-            </div>
-          </div>
-
-          <div class="image-container">
-          <div class="card" data-categoria:="Accion" data-categoria:="RPG" style="width: 18rem;" id="game">
-            <img class="card-img-top" src="{% static 'main/media/new/elden_ring.jpg' %}" alt="Card image cap">
-            <div class="word-overlay">Accion/RPG</div>
-            <div class="card-body">
-              <h5 class="card-title">Elden Ring</h5>
-              <p class="card-text">$5.000</p>
-              <a href="torrents/thewitcher3.torrent" class="btn btn-dark btn-block">Descargar</a>
-            </div>
-            </div>
-          </div>
-          
-          <div class="image-container">
-          <div class="card" data-categoria:="Accion" data-categoria:="RPG"  style="width: 18rem;" id="game">
-            <img class="card-img-top" src="{% static 'main/media/new/the_witcher_3.jpg' %}" alt="Card image cap">
-            <div class="word-overlay">Accion/RPG</div>
-            <div class="card-body">
-              <h5 class="card-title">The Witcher 3</h5>
-              <p class="card-text">$5.000</p>
-              <a href="https://www.gamestorrents.fm/wp-content/uploads/files/1672233001-ELDEN.RING.Deluxe.Edition.v1.08.1-P2P.torrent" class="btn btn-dark btn-block">Descargar</a>
-            </div>
-            </div>
-          </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      
         
       </section>
 
