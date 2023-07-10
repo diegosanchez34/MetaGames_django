@@ -103,6 +103,7 @@
 
    ><main>
 
+<<<<<<< HEAD
      
           
           <div class="carrito">
@@ -317,5 +318,55 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"> </script>
    
+=======
+    <div class="container-fluid px-4">
+      <div class="row">
+        {% for juego in juegos %}
+          {% if juego.categoria.id == 2%}
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="mb-5 card" id="game">
+              <img class="card-img-top" src="{{juego.image.url}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{juego.nombre}}</h5>
+                <p class="card-text">${{juego.precio}}</p>
+                <a href="torrents/gta5.torrent" class="btn btn-dark btn-block">Descargar</a>
+              </div>
+            </div> 
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </main>
+
+    <footer class="pie">  
+        <div class="izq_pie">
+          <img class="logo_pie" src="{% static 'main/media\MetaGamesLogo_3.png' %}" alt="Logo de Meta-Games blanco">
+        </div>
+  
+        <div class="centro_pie">
+          <span>Siguenos en: </span>
+          <a href="https://www.instagram.com/"><img class="fa-instagram" src="{% static 'main/media/icons/instagram.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://www.facebook.com/"><img class="fa-facebook-f" src="{% static 'main/media/icons/facebook.svg' %}" alt="Logo de Instagram"></a>
+          <a href="https://twitter.com/"><img class="fa-google-plus-g" src="{% static 'main/media/icons/twitter.svg' %}" alt="Logo de Instagram"></a>
+        </div>
+  
+        <div class="der_pie">
+          <span>MetaGames © 2023</span>
+        </div>      
+      </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+>>>>>>> e110b521968d2a60a92a96ac528affa2db83fa7b
 </body>
 </html>

@@ -9,16 +9,14 @@ def index(request):
     return render(request, 'main/index.html', context)
 
 def games(request):
-    context={}
+    juegos = Juego.objects.all()
+    context={"juegos":juegos}
     return render(request, 'main/games.html', context)
 
 def classicgames(request):
-    context={}
+    juegos = Juego.objects.all()
+    context={"juegos":juegos}
     return render(request, 'main/ClassicGames.html', context)
-
-def classicgames2(request):
-    context={}
-    return render(request, 'main/ClassicGames2.html', context)
 
 def contactanos(request):
     context={}
@@ -29,12 +27,9 @@ def iniciarsesion(request):
     return render(request, 'main/IniciarSesion.html', context)
 
 def newgames(request):
-    context={}
+    juegos = Juego.objects.all()
+    context={"juegos":juegos}
     return render(request, 'main/NewGames.html', context)
-
-def newgames2(request):
-    context={}
-    return render(request, 'main/NewGames2.html', context)
     
 def nosotros(request):
     context={}
@@ -45,12 +40,10 @@ def registrarse(request):
     return render(request, 'main/Registrarse.html', context)
 
 def retrogames(request):
-    context={}
+    juegos = Juego.objects.all()
+    context={"juegos":juegos}
     return render(request, 'main/RetroGames.html', context)
 
-def retrogames2(request):
-    context={}
-    return render(request, 'main/RetroGames2.html', context)
 
 def crud(request):
     juegos = Juego.objects.all()
